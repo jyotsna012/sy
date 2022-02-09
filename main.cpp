@@ -16,48 +16,17 @@ void printStack(Node* head);
 int countStack(Node* head);
 int checkImp(char toCheck);
 
-
 Node* remove(Node* &head);
 void add(Node* &head, Node* &tail, Node* toAdd);
 void printQueue(Node* head);
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
 
-
 int main(){
-
   char input[80];
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
   cin >> input;
   cin.get();
   infixToPostfix(input);
-  
- /* Node* tail = NULL;
-  Node* head = NULL;
-  Node* one = new Node;
-  Node* two = new Node;
-  Node* three = new Node;
-  Node* four = new Node;
-  
-  one -> dataVal = 1;
-  two -> dataVal = 2;
-  three -> dataVal = 3;
-  four -> dataVal = 4;
-  
-  add(head, tail, one);
-  printQueue(head);
-  add(head, tail, two);
-  printQueue(head);
-  add(head, tail, three);
-  printQueue(head);
-  remove(head);
-  printQueue(head);
-
-  push(head, one);
-  push(head, two);
-  push(head, three);
-  push(head, four);
-  peek(head); */
- 
 }
 
 void push(Node* &head, Node* toPush){
@@ -152,10 +121,10 @@ int checkImp(char toCheck){
         importance = 2;
       }
       else if(toCheck == '('){
-        importance = 4;
+        importance = -1;
       }
       else if(toCheck == ')'){
-        importance = 5;
+        importance = 4;
       }
   return importance;
 }
@@ -170,7 +139,6 @@ void infixToPostfix(char equation[80]){
       char val = equation[i];
       addIt -> dataVal = val;
       add(qHead, qTail, addIt);
-      printQueue(qHead);
     }
     else{
       int stackCount = countStack(sHead);
@@ -180,23 +148,32 @@ void infixToPostfix(char equation[80]){
         Node* n = new Node;
         n -> dataVal = op;
         push(sHead, n);
-        printStack(sHead);
       }else{
         int newImp = checkImp(op); 
         int stackImp = checkImp(sHead -> dataVal);
-        if(newImp > stackImp){
+        if(stackImp == -1){
           Node* n = new Node;
           n -> dataVal = op;
           push(sHead, n);
-          printStack(sHead);
+        }
+        else if(newImp > stackImp){
+          Node* n = new Node;
+          n -> dataVal = op;
+          push(sHead, n);
         } else if(newImp <= stackImp){
             cout << "hi, i entered the euqal to less than loop" << endl;
             popAdd(newImp, stackImp, sHead, qHead, qTail);
-            cout << "done popadding" << endl;
+            cout << "done pop adding" << endl;
             Node* n = new Node;
             n -> dataVal = op;
             push(sHead, n);
-            printStack(sHead);
+        }else if(newImp == 4){
+          while(stackImp != -1){
+            Node* removed = pop(sHead);
+            add(qHead, qTail, removed);
+            stackImp = checkImp(sHead -> dataVal);
+          }
+            Node* removed = pop(sHead);
         }
       }
     }
@@ -217,8 +194,6 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
             cout << "hi, i'm pop adding" << endl;
             Node* removed = pop(sHead);
             add(qHead, qTail, removed);
-            printStack(sHead);
-            printQueue(qHead);
             if(sHead == NULL){
               stackImp = 0;
             }else{
