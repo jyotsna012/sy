@@ -26,7 +26,8 @@ int main(){
   head -> dataVal = 1;
   two -> dataVal = 2;
   
-  head -> next = two;
+  two -> next = head;
+  
   head = two;
   
   printStack(head);
@@ -64,4 +65,7 @@ void printStack(Node* head){
   }
 }
 
+Node* pop(Node* &head){
+
+}
 
