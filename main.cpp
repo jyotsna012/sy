@@ -35,8 +35,10 @@ int main(){
   push(head, three);
   push(head, four);
   
-   printStack(head);
- // cout << head -> dataVal << endl;
+  //printStack(head);
+  cout << head -> dataVal << endl;
+  cout << head -> next -> dataVal << endl;
+  cout << head -> next -> next -> dataVal << endl;
   
   /*char input[80];
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
