@@ -157,7 +157,7 @@ void infixToPostfix(char equation[80]){
           n -> dataVal = op;
           push(sHead, n);
         } else if(newImp <= stackImp){
-             if(stackImp == -1){
+             if(newImp == -1){
              Node* n = new Node;
              n -> dataVal = op;
              push(sHead, n);
