@@ -72,10 +72,12 @@ void push(Node* &head, Node* toPush){
 }
 
 void printStack(Node* head){  
+  cout << "******Stack Start*******"<< endl;
   while(head != NULL){
     cout << head -> dataVal << endl;
     head = head -> next;
   }
+  cout << "******Stack End*******"<< endl;
 }
 
 int countStack(Node* head){  
@@ -123,10 +125,12 @@ Node* remove(Node* &head){
 }
 
 void printQueue(Node* head){
+  cout << "******Queue Start*******"<< endl;
   while(head != NULL){
-    cout << head -> dataVal;
+    cout << head -> dataVal << endl;
     head = head -> next;
   }
+  cout << "*******Queue End******"<< endl;
 }
 
 void infixToPostfix(char equation[80]){
