@@ -120,14 +120,14 @@ void printQueue(Node* head){
 
 void infixToPostfix(char equation[80]){
   Node* qHead = NULL;
-  printQueue(qHead);
   Node* qTail = NULL;
   Node* sHead = NULL;
   for(int i = 0; i < 1; i++){
     if(isdigit(equation[i])){
-      cout << equation[i] << endl;
       Node* addIt = new Node;
-      addIt -> dataVal = (int)equation[i];
+      int val = (int)equation[i]
+      cout << val << endl;
+      addIt -> dataVal = val;
       add(qHead, qTail, addIt);
       //printQueue(qHead);
     }
