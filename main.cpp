@@ -204,7 +204,7 @@ void infixToPostfix(char equation[80]){
             push(sHead, n);
             printStack(sHead);
             printQueue(qHead);
-            char equaa[80] = queueToChar(qHead);
+            char* equaa[80] = queueToChar(qHead);
             cout << equaa << endl;
             }
         }
@@ -218,9 +218,7 @@ void infixToPostfix(char equation[80]){
     add(qHead, qTail, popped);
   }
   printStack(sHead);
-  printQueue(qHead);
-  char exp[80] = queueToChar(qHead);
-  
+  printQueue(qHead);  
 }
 
 
