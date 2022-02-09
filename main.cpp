@@ -131,8 +131,43 @@ void infixToPostfix(char equation[80]){
       add(qHead, qTail, addIt);
       printQueue(qHead);
     }
-    else if(equation[i] == '+' || '-' || '*' || '^' || '/'){
-      cout<< "op: " << equation[i] << endl;
+    else(){
+      char op;
+      if(equation[i] == '+'){
+        op = equation[i];
+        cout << "op: " << op << endl;
+      }
+      else if(equation[i] == '+'){
+        op = equation[i];
+        cout << "op: " << op << endl;
+      }
+      else if(equation[i] == '-'){
+        op = equation[i];
+        cout << "op: " << op << endl;
+      }
+      else if(equation[i] == '/'){
+        op = equation[i];
+        cout << "op: " << op << endl;
+      }
+      else if(equation[i] == '^'){
+        op = equation[i];
+        cout << "op: " << op << endl;
+      }
+      else if(equation[i] == '*'){
+        op = equation[i];
+        cout << "op: " << op << endl;
+      }
+      else if(equation[i] == '('){
+        op = equation[i];
+        cout << "op: " << op << endl;
+      }
+      else if(equation[i] == ')'){
+        op = equation[i];
+        cout << "op: " << op << endl;
+      }
+      else{
+        cout << "something entered is invalid" << endl;
+      }
     }
   }
 }
