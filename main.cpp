@@ -131,7 +131,7 @@ void infixToPostfix(char equation[80]){
       add(qHead, qTail, addIt);
       printQueue(qHead);
     }
-    if(equation[i] == '+' || '-' || '*' || '^' || '/'){
+    else if(equation[i] == '+' || '-' || '*' || '^' || '/'){
       cout<< "op: " << equation[i] << endl;
     }
   }
