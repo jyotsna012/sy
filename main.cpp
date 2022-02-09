@@ -141,7 +141,6 @@ void infixToPostfix(char equation[80]){
     if(isdigit(equation[i])){
       Node* addIt = new Node;
       char val = equation[i];
-      cout << val << endl;
       addIt -> dataVal = val;
       add(qHead, qTail, addIt);
       printQueue(qHead);
@@ -187,7 +186,6 @@ void infixToPostfix(char equation[80]){
         Node* n = new Node;
         n -> dataVal = op;
         push(sHead, n);
-        cout << "stack: " << endl;
         printStack(sHead);
       }
     }
