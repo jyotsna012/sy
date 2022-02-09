@@ -35,17 +35,13 @@ int main(){
   four -> dataVal = 4;
   
   add(head, tail, one);
-  cout << tail -> dataVal << endl;
-  cout << head -> dataVal << endl;
+  printQueue(head);
   add(head, tail, two);
-  cout << tail -> dataVal << endl;
-  cout << head -> dataVal << endl;
+  printQueue(head);
   add(head, tail, three);
-  cout << tail -> dataVal << endl;
-  cout << head -> dataVal << endl;
+  printQueue(head);
   remove(head);
-  cout << tail -> dataVal << endl;
-  cout << head -> dataVal << endl;
+  printQueue(head);
 
   
  /* push(head, one);
