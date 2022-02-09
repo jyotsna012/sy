@@ -125,7 +125,7 @@ void infixToPostfix(char equation[80]){
   for(int i = 0; i < 1; i++){
     if(isdigit(equation[i])){
       Node* addIt = new Node;
-      int val = (int)equation[i];
+      int val = (int)equation[i] - 48;
       cout << val << endl;
       addIt -> dataVal = val;
       add(qHead, qTail, addIt);
