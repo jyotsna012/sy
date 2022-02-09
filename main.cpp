@@ -125,7 +125,7 @@ void infixToPostfix(char equation[80]){
   for(int i = 0; i <  strlen(equation); i++){
     if(isdigit(equation[i])){
       Node* addIt = new Node;
-      add -> dataVal = (int)equation[i];
+      addIt -> dataVal = (int)equation[i];
       add(qHead, qTail, addIt);
       printQueue(qHead);
     }
