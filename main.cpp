@@ -164,7 +164,7 @@ void infixToPostfix(char equation[80]){
           printStack(sHead);
           printQueue(qHead);
           }
-        } else if(newImp <= stackImp){
+        } else if(newImp <= stackImp && newImp != 4){
              if(newImp == -1){
              Node* n = new Node;
              n -> dataVal = op;
