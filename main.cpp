@@ -180,12 +180,10 @@ void infixToPostfix(char equation[80]){
       
       if(stackCount == 0){
         Node* n = new Node;
-        n -> dataVal
-        push(sHead, Node* toPush
+        n -> dataVal = op;
+        push(sHead, n);
+        printStack(sHead);
       }
-      
-      
-      
     }
   }
 }
