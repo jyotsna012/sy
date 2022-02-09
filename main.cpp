@@ -32,10 +32,10 @@ int main(){
   three -> dataVal = 3;
   four -> dataVal = 4;
   
-  add(tail, one);
+  add(head, tail, one);
   cout << tail -> dataVal << endl;
   cout << head -> dataVal << endl;
-  add(tail, two);
+  add(head, tail, two);
   cout << tail -> dataVal << endl;
   cout << head -> dataVal << endl;
   remove(head);
