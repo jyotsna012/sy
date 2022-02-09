@@ -21,24 +21,29 @@ void printStack(Node* head);
 int main(){
 
   Node* head = NULL;
+  Node* one = new Node;
   Node* two = new Node;
   Node* three = new Node;
   Node* four = new Node;
-
+  
+  one -> dataVal = 1;
   two -> dataVal = 2;
   three -> dataVal = 3;
   four -> dataVal = 4;
   
+  push(head, one);
   push(head, two);
   push(head, three);
   push(head, four);
   
-  cout<<"func"<<endl;
+  cout << "print full" << endl;
   printStack(head);
-  cout<<"man"<<endl;
-  cout << head -> dataVal << endl;
-  cout << head -> next -> dataVal << endl;
-  cout << head -> next -> next -> dataVal << endl;
+  pop(head);
+  printStack(head);
+  cout << "print one pop" << endl;
+  pop(head);
+  printStack(head);
+  cout << "print two pop" << endl;
   
   /*char input[80];
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
@@ -60,16 +65,18 @@ void push(Node* &head, Node* toPush){
 }
 
 void printStack(Node* head){  
-
   while(head != NULL){
-  
     cout << head -> dataVal << endl;
     head = head -> next;
-  
   }
-  
 }
 
 Node* pop(Node* &head){
+  Node* temp = head;
+  head = head -> next;
+  temp -> next = NULL;
+  cout << "this is value of popped" << temp -> dataVal << endl;
+  return temp;
+  
 }
 
