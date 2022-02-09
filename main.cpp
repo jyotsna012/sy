@@ -22,13 +22,27 @@ int main(){
 
   Node* head = new Node;
   Node* two = new Node;
-  
+  Node* three = new Node;
+  Node* four = new Node;
+
   head -> dataVal = 1;
-  two -> dataVal = 2;
+  head -> next = NULL;
   
+  two -> dataVal = 2;
   two -> next = head;
   
   head = two;
+  
+  three -> dataVal = 3;
+  two -> next = head;
+  
+  head = three;
+  
+  four -> dataVal = 4;
+  two -> next = head;
+  
+  head = four;
+  
   
   printStack(head);
   
