@@ -14,7 +14,7 @@ Node* pop(Node* &head);
 Node* peek(Node* head);
 
 Node* remove(Node* &head);
-void add(Node* &tail, Node* toAdd);
+void add(Node* &head, Node* &tail, Node* toAdd);
 void printStack(Node* head);
 
 
@@ -33,9 +33,16 @@ int main(){
   four -> dataVal = 4;
   
   add(tail, one);
-  add(tail, two);
-  
   cout << tail -> dataVal << endl;
+  cout << head -> dataVal << endl;
+  add(tail, two);
+  cout << tail -> dataVal << endl;
+  cout << head -> dataVal << endl;
+  remove(head);
+  cout << tail -> dataVal << endl;
+  cout << head -> dataVal << endl;
+  
+
   
  /* push(head, one);
   push(head, two);
@@ -82,13 +89,25 @@ Node* peek(Node* head){
   return head;
 }
 
-void add(Node* &tail, Node* toAdd){
-  if(tail == NULL){
+void add(Node* &head, Node* &tail, Node* toAdd){
+  if(head == NULL){
+    head = toAdd;
     tail = toAdd;
   }
+  else{
   Node* temp = tail;
-  temp -> next = toAdd;
   tail = toAdd;
+  temp->next = tail;
+  tail->next = NULL;
+  }
+
 }
 
+Node* remove(Node* &head){
+  Node* temp = head;
+  head = temp -> next;
+  temp -> next = NULL;
+  cout << "this is value of the returned : " << head -> dataVal << endl;
+  return temp;
+}
 
