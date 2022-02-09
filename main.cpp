@@ -73,8 +73,8 @@ Node* pop(Node* &head){
 }
 
 Node* peek(Node* head){
-  return head;
   cout << "this is value of peeked: " << head -> dataVal << endl;
+  return head;
 }
 
 
