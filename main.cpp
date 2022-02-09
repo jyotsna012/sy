@@ -127,7 +127,7 @@ void infixToPostfix(char equation[80]){
       Node* addIt = new Node;
       addIt -> dataVal = (int)equation[i];
       add(qHead, qTail, addIt);
-      printQueue(qHead);
+      //printQueue(qHead);
     }
   }
 }
