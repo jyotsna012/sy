@@ -35,7 +35,7 @@ int main(){
   add(tail, one);
   add(tail, two);
   
-  cout << tail -> dataVal << endl;
+ // cout << tail -> dataVal << endl;
   
  /* push(head, one);
   push(head, two);
