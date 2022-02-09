@@ -189,14 +189,12 @@ void infixToPostfix(char equation[80]){
           n -> dataVal = op;
           push(sHead, n);
           printStack(sHead);
-        } else{
-            while(newImp <= stackImp){
+        } else(newImp <= stackImp){
             Node* removed = pop(sHead);
             add(qHead, qTail, removed);
             printStack(sHead);
             printQueue(qHead);
             stackImp = checkImp(sHead -> dataVal);
-            }
         }
       }
     }
