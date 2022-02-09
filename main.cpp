@@ -122,7 +122,7 @@ void infixToPostfix(char equation[80]){
   Node* qHead = NULL;
   Node* qTail = NULL;
   Node* sHead = NULL;
-  for(int i = 0; i <  strlen(equation); i++){
+  for(int i = 0; i < 1; i++){
     if(isdigit(equation[i])){
       Node* addIt = new Node;
       addIt -> dataVal = (int)equation[i];
