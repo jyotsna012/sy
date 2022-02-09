@@ -214,5 +214,8 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
             stackImp = checkImp(sHead -> dataVal);
             popAdd(newImp, stackImp, sHead, qHead, qTail);
   }
+  else{
+    return;
+  }
 }
 
