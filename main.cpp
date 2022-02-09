@@ -35,7 +35,9 @@ int main(){
   push(head, three);
   push(head, four);
   
-  //printStack(head);
+  cout<<"func"<<endl;
+  printStack(head);
+  cout<<"man"<<endl;
   cout << head -> dataVal << endl;
   cout << head -> next -> dataVal << endl;
   cout << head -> next -> next -> dataVal << endl;
