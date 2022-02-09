@@ -38,9 +38,9 @@ int main(){
   add(head, tail, two);
   cout << tail -> dataVal << endl;
   cout << head -> dataVal << endl;
-  remove(head);
-  cout << tail -> dataVal << endl;
-  cout << head -> dataVal << endl;
+  //remove(head);
+  //cout << tail -> dataVal << endl;
+  //cout << head -> dataVal << endl;
   
 
   
