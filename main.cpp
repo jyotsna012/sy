@@ -157,8 +157,22 @@ void infixToPostfix(char equation[80]){
         int stackImp = checkImp(sHead -> dataVal);
         cout<<"newImp: " << newImp << endl;
         cout << "stackImp: " << stackImp << endl;
+        
+        if(newImp == 4){
+           cout << "i am in 4 area " << endl;
+          while(stackImp != -1){
+            cout << "came into while " << endl;
+            Node* removed = pop(sHead);
+            add(qHead, qTail, removed);
+            stackImp = checkImp(sHead -> dataVal);
+          }
+           cout << "came out while " << endl;
+            Node* removed = pop(sHead);
+            printStack(sHead);
+            printQueue(qHead);
+        }
  
-         if(newImp > stackImp){
+         else if(newImp > stackImp){
            if(newImp != 4){
           Node* n = new Node;
           n -> dataVal = op;
@@ -181,18 +195,6 @@ void infixToPostfix(char equation[80]){
             printStack(sHead);
             printQueue(qHead);
             }
-        }else if(newImp == 4){
-           cout << "i am in 4 area " << endl;
-          while(stackImp != -1){
-            cout << "came into while " << endl;
-            Node* removed = pop(sHead);
-            add(qHead, qTail, removed);
-            stackImp = checkImp(sHead -> dataVal);
-          }
-           cout << "came out while " << endl;
-            Node* removed = pop(sHead);
-            printStack(sHead);
-            printQueue(qHead);
         }
       }
     }
