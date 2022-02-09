@@ -109,7 +109,7 @@ Node* remove(Node* &head){
   Node* temp = head;
   head = temp -> next;
   temp -> next = NULL;
-  cout << "this is value of the returned : " << head -> dataVal << endl;
+  cout << "this is value of the returned : " << temp -> dataVal << endl;
   return temp;
 }
 
