@@ -60,11 +60,14 @@ void push(Node* &head, Node* toPush){
 }
 
 void printStack(Node* head){  
-  if(head!=NULL){
-    cout << "in the loop2" << endl;
-    cout << head->dataVal << endl;
-    printStack(head->next);
+
+  while(head -> next != 1){
+  
+    cout << head -> dataVal << endl;
+    head = head -> next;
+  
   }
+  
 }
 
 Node* pop(Node* &head){
