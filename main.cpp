@@ -191,6 +191,10 @@ void infixToPostfix(char equation[80]){
           printStack(sHead);
         } else if(newImp <= stackImp){
             popAdd(newImp, stackImp, sHead, qHead, qTail);
+            Node* n = new Node;
+            n -> dataVal = op;
+            push(sHead, n);
+            push(sHead, n);
         }
       }
     }
