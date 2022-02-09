@@ -18,7 +18,9 @@ int checkImp(char toCheck);
 Node* remove(Node* &head);
 void add(Node* &head, Node* &tail, Node* toAdd);
 void printQueue(Node* head);
+char* queueToChar(Node* head);
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
+void toTree(char exp[80]);
 
 int main(){
   char input[80];
@@ -100,6 +102,15 @@ void printQueue(Node* head){
     head = head -> next;
   }
   cout << "*******Queue End******"<< endl;
+}
+
+char* queueToChar(Node* head){
+  char newEq[80];
+  while(head != NULL){
+    strcpy(newEq, head->dataVal);
+    head = head -> next;
+  }
+  return newEq;
 }
 
 int checkImp(char toCheck){
@@ -193,6 +204,8 @@ void infixToPostfix(char equation[80]){
             push(sHead, n);
             printStack(sHead);
             printQueue(qHead);
+            char equaa[80] = queueToChar(qHead);
+            cout << equaa << endl;
             }
         }
       }
@@ -206,6 +219,8 @@ void infixToPostfix(char equation[80]){
   }
   printStack(sHead);
   printQueue(qHead);
+  char exp[80] = queueToChar(qHead);
+  
 }
 
 
@@ -228,3 +243,6 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   }
 }
 
+void toTree(char exp[80]){
+  
+}
