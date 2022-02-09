@@ -153,9 +153,11 @@ void infixToPostfix(char equation[80]){
         int stackImp = checkImp(sHead -> dataVal);
  
          if(newImp > stackImp){
+           if(newImp != 4){
           Node* n = new Node;
           n -> dataVal = op;
           push(sHead, n);
+          }
         } else if(newImp <= stackImp){
              if(newImp == -1){
              Node* n = new Node;
