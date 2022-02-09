@@ -205,7 +205,7 @@ void infixToPostfix(char equation[80]){
             printStack(sHead);
             printQueue(qHead);
             char equaa[80]; 
-            strcpy(equaa, queueToChar(qHead);
+            strcpy(equaa, queueToChar(qHead));
             cout << equaa << endl;
             }
         }
