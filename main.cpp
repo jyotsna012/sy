@@ -5,7 +5,7 @@ using namespace std;
 
 struct Node{
   Node* next = NULL;
-  int dataVal;
+  char dataVal;
 };
 
 void infixToPostfix(char equation[80]);
@@ -135,7 +135,7 @@ void infixToPostfix(char equation[80]){
   for(int i = 0; i < strlen(equation); i++){
     if(isdigit(equation[i])){
       Node* addIt = new Node;
-      int val = (int)equation[i] - 48;
+      char val = equation[i];
       cout << val << endl;
       addIt -> dataVal = val;
       add(qHead, qTail, addIt);
@@ -144,6 +144,7 @@ void infixToPostfix(char equation[80]){
     else{
       char op;
       int importance; 
+      int stackCount = countStack(sHead);
       if(equation[i] == '+'){
         op = equation[i];
         importance = 1;
@@ -177,7 +178,13 @@ void infixToPostfix(char equation[80]){
         break;
       }
       
-      int peekNu
+      if(stackCount == 0){
+        Node* n = new Node;
+        n -> dataVal
+        push(sHead, Node* toPush
+      }
+      
+      
       
     }
   }
