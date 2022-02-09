@@ -151,16 +151,17 @@ void infixToPostfix(char equation[80]){
       }else{
         int newImp = checkImp(op); 
         int stackImp = checkImp(sHead -> dataVal);
-        if(stackImp == -1){
-          Node* n = new Node;
-          n -> dataVal = op;
-          push(sHead, n);
-        }
-        else if(newImp > stackImp){
+ 
+         if(newImp > stackImp){
           Node* n = new Node;
           n -> dataVal = op;
           push(sHead, n);
         } else if(newImp <= stackImp){
+             if(stackImp == -1){
+             Node* n = new Node;
+             n -> dataVal = op;
+             push(sHead, n);
+            }else{
             cout << "hi, i entered the euqal to less than loop" << endl;
             cout<< "op: " << op << endl;
             cout<<"newImp: " << newImp << endl;
@@ -170,6 +171,7 @@ void infixToPostfix(char equation[80]){
             Node* n = new Node;
             n -> dataVal = op;
             push(sHead, n);
+            }
         }else if(newImp == 4){
           while(stackImp != -1){
             Node* removed = pop(sHead);
