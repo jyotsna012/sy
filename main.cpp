@@ -20,17 +20,15 @@ void printStack(Node* head);
 
 int main(){
 
-  Node* head = new Node;
+  Node* head = NULL;
   Node* two = new Node;
   Node* three = new Node;
   Node* four = new Node;
 
-  head -> dataVal = 1;
   two -> dataVal = 2;
   three -> dataVal = 3;
   four -> dataVal = 4;
   
-  push(head, head);
   push(head, two);
   push(head, three);
   push(head, four);
