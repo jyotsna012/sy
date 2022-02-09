@@ -131,7 +131,7 @@ void infixToPostfix(char equation[80]){
       add(qHead, qTail, addIt);
       printQueue(qHead);
     }
-    else(){
+    else{
       char op;
       if(equation[i] == '+'){
         op = equation[i];
