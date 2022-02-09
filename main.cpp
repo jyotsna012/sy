@@ -185,11 +185,14 @@ void infixToPostfix(char equation[80]){
             printQueue(qHead);
             }
         }else if(newImp == 4){
+           cout << "i am in 4 area " << endl;
           while(stackImp != -1){
+            cout << "came into while " << endl;
             Node* removed = pop(sHead);
             add(qHead, qTail, removed);
             stackImp = checkImp(sHead -> dataVal);
           }
+           cout << "came out while " << endl;
             Node* removed = pop(sHead);
             printStack(sHead);
             printQueue(qHead);
