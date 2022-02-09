@@ -14,6 +14,7 @@ Node* pop(Node* &head);
 Node* peek(Node* head);
 void printStack(Node* head);
 int countStack(Node* head);
+int checkImp(char toCheck);
 
 
 Node* remove(Node* &head);
@@ -133,6 +134,32 @@ void printQueue(Node* head){
   cout << "*******Queue End******"<< endl;
 }
 
+int checkImp(char toCheck){
+  int importance;
+      if(toCheck == '+'){
+        importance = 1;
+      }
+      else if(toCheck == '-'){
+        importance = 1;
+      }
+      else if(toCheck == '/'){
+        importance = 2;
+      }
+      else if(toCheck == '^'){
+        importance = 3;
+      }
+      else if(toCheck == '*'){
+        importance = 2;
+      }
+      else if(toCheck == '('){
+        importance = 4;
+      }
+      else if(toCheck == ')'){
+        importance = 5;
+      }
+  return importance;
+}
+
 void infixToPostfix(char equation[80]){
   Node* qHead = NULL;
   Node* qTail = NULL;
@@ -146,47 +173,23 @@ void infixToPostfix(char equation[80]){
       printQueue(qHead);
     }
     else{
-      char op;
-      int importance; 
       int stackCount = countStack(sHead);
-      if(equation[i] == '+'){
-        op = equation[i];
-        importance = 1;
-      }
-      else if(equation[i] == '-'){
-        op = equation[i];
-        importance = 1;
-      }
-      else if(equation[i] == '/'){
-        op = equation[i];
-        importance = 2;
-      }
-      else if(equation[i] == '^'){
-        op = equation[i];
-        importance = 3;
-      }
-      else if(equation[i] == '*'){
-        op = equation[i];
-        importance = 2;
-      }
-      else if(equation[i] == '('){
-        op = equation[i];
-        importance = 4;
-      }
-      else if(equation[i] == ')'){
-        op = equation[i];
-        importance = 5;
-      }
-      else{
-        cout << "something entered is invalid" << endl;
-        break;
-      }
+      char op = equation[i];
       
       if(stackCount == 0){
         Node* n = new Node;
         n -> dataVal = op;
         push(sHead, n);
         printStack(sHead);
+      }else{
+        int newImp = checkImp(op); 
+        int stackImp = checkImp(head -> dataVal);
+        if(newImp > stackImp){
+          Node* n = new Node;
+          n -> dataVal = op;
+          push(sHead, n);
+          push(sHead, n);  
+        }
       }
     }
   }
