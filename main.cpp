@@ -13,6 +13,8 @@ void push(Node* &head, Node* toPush);
 Node* pop(Node* &head);
 Node* peek(Node* head);
 void printStack(Node* head);
+int countStack(Node* head);
+
 
 Node* remove(Node* &head);
 void add(Node* &head, Node* &tail, Node* toAdd);
@@ -76,6 +78,14 @@ void printStack(Node* head){
   }
 }
 
+int countStack(Node* head){  
+  int count = 0;
+  while(head != NULL){
+  count = count +1;
+  head = head -> next;
+  }
+}
+
 Node* pop(Node* &head){
   Node* temp = head;
   head = head -> next;
@@ -133,41 +143,42 @@ void infixToPostfix(char equation[80]){
     }
     else{
       char op;
+      int importance; 
       if(equation[i] == '+'){
         op = equation[i];
-        cout << "op: " << op << endl;
-      }
-      else if(equation[i] == '+'){
-        op = equation[i];
-        cout << "op: " << op << endl;
+        importance = 1;
       }
       else if(equation[i] == '-'){
         op = equation[i];
-        cout << "op: " << op << endl;
+        importance = 1;
       }
       else if(equation[i] == '/'){
         op = equation[i];
-        cout << "op: " << op << endl;
+        importance = 2;
       }
       else if(equation[i] == '^'){
         op = equation[i];
-        cout << "op: " << op << endl;
+        importance = 3;
       }
       else if(equation[i] == '*'){
         op = equation[i];
-        cout << "op: " << op << endl;
+        importance = 2;
       }
       else if(equation[i] == '('){
         op = equation[i];
-        cout << "op: " << op << endl;
+        importance = 4;
       }
       else if(equation[i] == ')'){
         op = equation[i];
-        cout << "op: " << op << endl;
+        importance = 5;
       }
       else{
         cout << "something entered is invalid" << endl;
+        break;
       }
+      
+      int peekNu
+      
     }
   }
 }
