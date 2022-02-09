@@ -47,6 +47,7 @@ int main(){
 void push(Node* &head, Node* toPush){
   if(head == NULL){
     head = toPush;
+    head -> next = NULL;
   }
   else{
     Node* temp = head;
