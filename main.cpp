@@ -20,7 +20,7 @@ int checkImp(char toCheck);
 Node* remove(Node* &head);
 void add(Node* &head, Node* &tail, Node* toAdd);
 void printQueue(Node* head);
-popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
+void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
 
 
 int main(){
