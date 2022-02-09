@@ -12,10 +12,12 @@ void infixToPostfix(char equation[80]);
 void push(Node* &head, Node* toPush);
 Node* pop(Node* &head);
 Node* peek(Node* head);
+void printStack(Node* head);
 
 Node* remove(Node* &head);
 void add(Node* &head, Node* &tail, Node* toAdd);
-void printStack(Node* head);
+void printQueue(Node* head);
+
 
 
 int main(){
@@ -112,4 +114,13 @@ Node* remove(Node* &head){
   cout << "this is value of the returned : " << temp -> dataVal << endl;
   return temp;
 }
+
+void printQueue(Node* head){
+  while(head != NULL){
+    cout << head -> dataVal << endl;
+    head = head -> next;
+  }
+
+}
+
 
