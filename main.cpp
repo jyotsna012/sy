@@ -201,6 +201,14 @@ void infixToPostfix(char equation[80]){
       }
     }
   }
+  
+  int stackCount = countStack(sHead);
+  for(int a = 0; a < stackCount; a++){
+    Node* popped = pop(sHead);
+    add(qHead, qTail, popped);
+  }
+  printStack(sHead);
+  printQueue(qHead);
 }
 
 
