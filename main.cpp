@@ -140,7 +140,7 @@ void infixToPostfix(char equation[80]){
       addIt -> dataVal = val;
       add(qHead, qTail, addIt);
       printStack(sHead);
-      printQueue(qHead)
+      printQueue(qHead);
     }
     else{
       int stackCount = countStack(sHead);
@@ -151,7 +151,7 @@ void infixToPostfix(char equation[80]){
         n -> dataVal = op;
         push(sHead, n);
         printStack(sHead);
-        printQueue(qHead)
+        printQueue(qHead);
       }else{
         int newImp = checkImp(op); 
         int stackImp = checkImp(sHead -> dataVal);
