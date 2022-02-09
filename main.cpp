@@ -122,7 +122,7 @@ void infixToPostfix(char equation[80]){
   Node* qHead = NULL;
   Node* qTail = NULL;
   Node* sHead = NULL;
-  for(int i = 0; i < strlen(equation)-1; i++){
+  for(int i = 0; i < strlen(equation); i++){
     if(isdigit(equation[i])){
       Node* addIt = new Node;
       int val = (int)equation[i] - 48;
@@ -132,7 +132,7 @@ void infixToPostfix(char equation[80]){
       printQueue(qHead);
     }
     if(equation[i] == '+' || '-' || '*' || '^' || '/'){
-      cout<<"op"<<endl;
+      cout<< "op: " << equation[i] << endl;
     }
   }
 }
