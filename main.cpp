@@ -22,7 +22,13 @@ void printQueue(Node* head);
 
 int main(){
 
-  Node* tail = NULL;
+  char input[80];
+  cout << "please enter you math equation, make sure that there are no spaces" << endl;
+  cin >> input;
+  cin.get();
+  infixToPostfix(input);
+  
+ /* Node* tail = NULL;
   Node* head = NULL;
   Node* one = new Node;
   Node* two = new Node;
@@ -43,18 +49,12 @@ int main(){
   remove(head);
   printQueue(head);
 
-  
- /* push(head, one);
+  push(head, one);
   push(head, two);
   push(head, three);
   push(head, four);
   peek(head); */
-  
-  /*char input[80];
-  cout << "please enter you math equation, make sure that there are no spaces" << endl;
-  cin >> input;
-  cin.get();
-  infixToPostfix(input);*/
+ 
 }
 
 void push(Node* &head, Node* toPush){
@@ -116,7 +116,13 @@ void printQueue(Node* head){
     cout << head -> dataVal << endl;
     head = head -> next;
   }
+}
+
+void infixToPostfix(char equation[80]){
+  
+
 
 }
+
 
 
