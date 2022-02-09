@@ -162,6 +162,9 @@ void infixToPostfix(char equation[80]){
           push(sHead, n);
         } else if(newImp <= stackImp){
             cout << "hi, i entered the euqal to less than loop" << endl;
+            cout<< "op: " << op << endl;
+            cout<<"newImp: " << newImp << endl;
+            cout << "stackImp: " << stackImp << endl;
             popAdd(newImp, stackImp, sHead, qHead, qTail);
             cout << "done pop adding" << endl;
             Node* n = new Node;
