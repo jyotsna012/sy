@@ -183,6 +183,7 @@ void infixToPostfix(char equation[80]){
         Node* n = new Node;
         n -> dataVal = op;
         push(sHead, n);
+        cout << "stack: " << endl;
         printStack(sHead);
       }
     }
