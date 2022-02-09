@@ -35,7 +35,8 @@ int main(){
   push(head, three);
   push(head, four);
   
-  cout << head -> dataVal << endl;
+   printStack(head);
+ // cout << head -> dataVal << endl;
   
   /*char input[80];
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
@@ -52,7 +53,7 @@ void push(Node* &head, Node* toPush){
   else{
     Node* temp = head;
     toPush -> next = temp;
-    toPush = head;
+    head = toPush;
   }
 }
 
