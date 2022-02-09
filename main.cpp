@@ -63,7 +63,7 @@ void push(Node* &head, Node* toPush){
 
 void printStack(Node* head){  
 
-  while(head -> dataVal != 1){
+  while(head != NULL){
   
     cout << head -> dataVal << endl;
     head = head -> next;
