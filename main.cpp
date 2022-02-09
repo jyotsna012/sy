@@ -113,7 +113,7 @@ Node* remove(Node* &head){
 
 void printQueue(Node* head){
   while(head != NULL){
-    cout << head -> dataVal << endl;
+    cout << head -> dataVal;
     head = head -> next;
   }
 }
