@@ -196,9 +196,9 @@ void infixToPostfix(char equation[80]){
     }
   }
 }
-}
 
-void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
+
+void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   if(newImp <= stackImp){
             Node* removed = pop(sHead);
             add(qHead, qTail, removed);
@@ -207,6 +207,5 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
             stackImp = checkImp(sHead -> dataVal);
             popAdd(newImp, stackImp, sHead, qHead, qTail);
   }
-
-
+}
 
