@@ -41,7 +41,9 @@ int main(){
   add(head, tail, three);
   cout << tail -> dataVal << endl;
   cout << head -> dataVal << endl;
-  
+  remove(head);
+  cout << tail -> dataVal << endl;
+  cout << head -> dataVal << endl;
 
   
  /* push(head, one);
