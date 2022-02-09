@@ -26,27 +26,16 @@ int main(){
   Node* four = new Node;
 
   head -> dataVal = 1;
-  head -> next = NULL;
-  
   two -> dataVal = 2;
-  two -> next = head;
-  
-  head = two;
-  
   three -> dataVal = 3;
-  two -> next = head;
-  
-  head = three;
-  
   four -> dataVal = 4;
-  two -> next = head;
   
-  head = four;
-  
+  push(head, head);
+  push(head, two);
+  push(head, three);
+  push(head, four);
   
   printStack(head);
-  
-  
   
   /*char input[80];
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
@@ -56,17 +45,14 @@ int main(){
 }
 
 void push(Node* &head, Node* toPush){
-
   if(head == NULL){
     head = toPush;
   }
   else{
-  
-    head -> next = toPush;
+    Node* temp = head;
+    toPush -> next = temp;
     toPush = head;
-  
   }
-
 }
 
 void printStack(Node* head){  
@@ -78,6 +64,5 @@ void printStack(Node* head){
 }
 
 Node* pop(Node* &head){
-
 }
 
