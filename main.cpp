@@ -139,6 +139,8 @@ void infixToPostfix(char equation[80]){
       char val = equation[i];
       addIt -> dataVal = val;
       add(qHead, qTail, addIt);
+      printStack(sHead);
+      printQueue(qHead)
     }
     else{
       int stackCount = countStack(sHead);
@@ -148,6 +150,8 @@ void infixToPostfix(char equation[80]){
         Node* n = new Node;
         n -> dataVal = op;
         push(sHead, n);
+        printStack(sHead);
+        printQueue(qHead)
       }else{
         int newImp = checkImp(op); 
         int stackImp = checkImp(sHead -> dataVal);
@@ -157,12 +161,16 @@ void infixToPostfix(char equation[80]){
           Node* n = new Node;
           n -> dataVal = op;
           push(sHead, n);
+          printStack(sHead);
+          printQueue(qHead);
           }
         } else if(newImp <= stackImp){
              if(newImp == -1){
              Node* n = new Node;
              n -> dataVal = op;
              push(sHead, n);
+            printStack(sHead);
+            printQueue(qHead);
             }else{
             cout << "hi, i entered the euqal to less than loop" << endl;
             cout<< "op: " << op << endl;
@@ -173,6 +181,8 @@ void infixToPostfix(char equation[80]){
             Node* n = new Node;
             n -> dataVal = op;
             push(sHead, n);
+            printStack(sHead);
+            printQueue(qHead);
             }
         }else if(newImp == 4){
           while(stackImp != -1){
@@ -181,6 +191,8 @@ void infixToPostfix(char equation[80]){
             stackImp = checkImp(sHead -> dataVal);
           }
             Node* removed = pop(sHead);
+            printStack(sHead);
+            printQueue(qHead);
         }
       }
     }
