@@ -55,7 +55,10 @@ void push(Node* &head, Node* toPush){
 }
 
 void printStack(Node* head){
+   cout << "in the loopq" << endl;  
+  
   if(head!=NULL){
+    cout << "in the loop2" << endl;
     cout << head->dataVal << endl;
     printStack(head->next);
   }
