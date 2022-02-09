@@ -119,6 +119,8 @@ void printQueue(Node* head){
 }
 
 void infixToPostfix(char equation[80]){
+  cout << equation << endl;
+  cout << equation[0] << endl;
   Node* qHead = NULL;
   Node* qTail = NULL;
   Node* sHead = NULL;
