@@ -212,6 +212,8 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
             printStack(sHead);
             printQueue(qHead);
             stackImp = checkImp(sHead -> dataVal);
+            cout << "New Imp: " << newImp << endl;
+            cout << "Check Imp: " << checkImp << endl;
             popAdd(newImp, stackImp, sHead, qHead, qTail);
   }
   else{
