@@ -36,14 +36,7 @@ int main(){
   push(head, three);
   push(head, four);
   
-  cout << "print full" << endl;
-  printStack(head);
-  pop(head);
-  printStack(head);
-  cout << "print one pop" << endl;
-  pop(head);
-  printStack(head);
-  cout << "print two pop" << endl;
+  peek(head);
   
   /*char input[80];
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
@@ -75,8 +68,13 @@ Node* pop(Node* &head){
   Node* temp = head;
   head = head -> next;
   temp -> next = NULL;
-  cout << "this is value of popped" << temp -> dataVal << endl;
+  cout << "this is value of popped: " << temp -> dataVal << endl;
   return temp;
-  
 }
+
+Node* peek(Node* head){
+  return head;
+  cout << "this is value of peeked: " << head -> dataVal << endl;
+}
+
 
