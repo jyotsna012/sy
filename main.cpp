@@ -15,7 +15,6 @@ Node* peek(Node* head);
 void printStack(Node* head);
 int countStack(Node* head);
 int checkImp(char toCheck);
-
 Node* remove(Node* &head);
 void add(Node* &head, Node* &tail, Node* toAdd);
 void printQueue(Node* head);
