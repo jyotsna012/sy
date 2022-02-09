@@ -20,6 +20,7 @@ void printStack(Node* head);
 
 int main(){
 
+  Node* tail = NULL;
   Node* head = NULL;
   Node* one = new Node;
   Node* two = new Node;
@@ -31,12 +32,16 @@ int main(){
   three -> dataVal = 3;
   four -> dataVal = 4;
   
-  push(head, one);
+  add(tail, one);
+  add(tail, two);
+  
+  cout << tail -> dataVal << endl;
+  
+ /* push(head, one);
   push(head, two);
   push(head, three);
   push(head, four);
-  
-  peek(head);
+  peek(head); */
   
   /*char input[80];
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
@@ -75,6 +80,15 @@ Node* pop(Node* &head){
 Node* peek(Node* head){
   cout << "this is value of peeked: " << head -> dataVal << endl;
   return head;
+}
+
+void add(Node* &tail, Node* toAdd){
+  if(tail == NULL){
+    toAdd = tail;
+  }
+  Node* temp = tail;
+  temp -> next = toAdd;
+  toAdd = tail;
 }
 
 
