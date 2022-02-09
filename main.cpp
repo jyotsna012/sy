@@ -84,6 +84,7 @@ int countStack(Node* head){
   count = count +1;
   head = head -> next;
   }
+  return count;
 }
 
 Node* pop(Node* &head){
