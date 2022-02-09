@@ -20,7 +20,7 @@ int checkImp(char toCheck);
 Node* remove(Node* &head);
 void add(Node* &head, Node* &tail, Node* toAdd);
 void printQueue(Node* head);
-
+popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
 
 
 int main(){
@@ -190,16 +190,22 @@ void infixToPostfix(char equation[80]){
           push(sHead, n);
           printStack(sHead);
         } else(newImp <= stackImp){
-            Node* removed = pop(sHead);
-            add(qHead, qTail, removed);
-            printStack(sHead);
-            printQueue(qHead);
-            stackImp = checkImp(sHead -> dataVal);
+            popAdd(newImp, stackImp, sHead, qHead, qTail);
         }
       }
     }
   }
 }
 
+void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
+  if(newImp <= stackImp){
+            Node* removed = pop(sHead);
+            add(qHead, qTail, removed);
+            printStack(sHead);
+            printQueue(qHead);
+            stackImp = checkImp(sHead -> dataVal);
+            popAdd(newImp, stackImp, sHead, qHead, qTail);
+  }
+}
 
 
