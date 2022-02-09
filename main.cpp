@@ -122,14 +122,14 @@ void infixToPostfix(char equation[80]){
   Node* qHead = NULL;
   Node* qTail = NULL;
   Node* sHead = NULL;
-  for(int i = 0; i < 1; i++){
+  for(int i = 0; i < strlan(equation); i++){
     if(isdigit(equation[i])){
       Node* addIt = new Node;
       int val = (int)equation[i] - 48;
       cout << val << endl;
       addIt -> dataVal = val;
       add(qHead, qTail, addIt);
-      //printQueue(qHead);
+      printQueue(qHead);
     }
   }
 }
