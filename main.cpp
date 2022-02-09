@@ -20,7 +20,7 @@ void printStack(Node* head);
 
 int main(){
 
-  Node* one = head;
+  Node* head = new Node;
   Node* two = new Node;
   
   head -> dataVal = 1;
