@@ -183,7 +183,7 @@ void infixToPostfix(char equation[80]){
         printStack(sHead);
       }else{
         int newImp = checkImp(op); 
-        int stackImp = checkImp(head -> dataVal);
+        int stackImp = checkImp(sHead -> dataVal);
         if(newImp > stackImp){
           Node* n = new Node;
           n -> dataVal = op;
