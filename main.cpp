@@ -268,7 +268,6 @@ void treepush(nodeForTree* &head, nodeForTree* toPush){
 
 void toTree(char* queueChar){
   nodeForTree* head = NULL; 
-  head -> setVal(NULL);
   for(int i = 0; i < strlen(queueChar); i++){
     if(isdigit(queueChar[i])){
       nodeForTree* addIt = new nodeForTree();
