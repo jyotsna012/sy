@@ -6,7 +6,7 @@ using namespace std;
 
 struct Node{
   Node* next = NULL;
-  char* dataVal;
+  char dataVal;
 };
 
 void infixToPostfix(char equation[80]);
