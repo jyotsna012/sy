@@ -15,13 +15,13 @@ Node* pop(Node* &head);
 Node* peek(Node* head);
 void printStack(Node* head);
 int countStack(Node* head);
+int countQueue(Node* head);
 int checkImp(char toCheck);
 Node* remove(Node* &head);
 void add(Node* &head, Node* &tail, Node* toAdd);
 void printQueue(Node* head);
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
-void toTree(char exp[80]);
-char* queueToChar(Node* head);
+void toTree(Node* head);
 
 int main(){
   char input[80];
@@ -60,6 +60,16 @@ int countStack(Node* head){
   }
   return count;
 }
+
+int countQueue(Node* head){  
+  int count = 0;
+  while(head != NULL){
+  count = count +1;
+  head = head -> next;
+  }
+  return count;
+}
+
 
 Node* pop(Node* &head){
   Node* temp = head;
@@ -208,27 +218,11 @@ void infixToPostfix(char equation[80]){
     add(qHead, qTail, popped);
   }
   printStack(sHead);
-  printQueue(qHead);  
-  cout << "here is the final queue as a char array: "<< endl;
-  char* newArray = queueToChar(qHead);
+  printQueue(qHead);
+  cout << countQueue(qHead) << endl;
+  //char* toReturn = new char[];
 }
 
-char* queueToChar(Node* head){
-  char* array = new char[80];
-  while(head != NULL){
-    cout << "entered 1" << endl;
-    char* theVal = new char[80]; 
-    cout << "entered 2" << endl;
-    strcpy(theVal, head -> dataVal);
-    cout << "entered 3" << endl;
-    strcat(array, theVal);
-    cout << "entered 4" << endl;
-    head = head -> next;
-    cout << "entered 5" << endl;
-  }
-  cout << "returning" << endl;
-  return array;
-}
 
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   if(newImp <= stackImp){
@@ -249,6 +243,6 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   }
 }
 
-void toTree(char exp[80]){
+void toTree(Node* head){
   
 }
