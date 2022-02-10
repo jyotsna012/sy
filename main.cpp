@@ -219,9 +219,9 @@ char* queueToChar(Node* head){
     cout << "entered 1" << endl;
     char* theVal = new char[80]; 
     cout << "entered 2" << endl;
-    strncpy(theVal, head -> dataVal);
+    strncpy(theVal, head -> dataVal, 1);
     cout << "entered 3" << endl;
-    strncat(array, theVal);
+    strncat(array, theVal, 1);
     cout << "entered 4" << endl;
     head = head -> next;
     cout << "entered 5" << endl;
