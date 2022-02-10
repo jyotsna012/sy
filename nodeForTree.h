@@ -18,5 +18,5 @@ class nodeForTree{
   nodeForTree* left;
   nodeForTree* right;
   nodeForTree* next;
-  char* val;
+  char val;
 };
