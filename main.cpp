@@ -274,7 +274,7 @@ void toTree(char* queueChar){
   for(int i = 0; i < strlen(queueChar); i++){
     cout << "val: " << queueChar[i] << endl;
       cout << "hi 3: " << endl;
-    if(queueChar[i] == ''){
+    if(queueChar[i] == '\0'){
       cout << "space 0" << endl;
     }
     if(queueChar[i] == ' '){
