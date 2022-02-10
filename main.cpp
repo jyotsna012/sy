@@ -22,14 +22,14 @@ Node* remove(Node* &head);
 void add(Node* &head, Node* &tail, Node* toAdd);
 void printQueue(Node* head);
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
-void toTree(Node* head);
+void toTree(char* queueChar);
 
 int main(){
   char input[80];
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
   cin >> input;
   cin.get();
-  cout << infixToPostfix(input) << endl;
+  cout << "FINAL QUEUE: " << infixToPostfix(input) << endl;
 }
 
 void push(Node* &head, Node* toPush){
@@ -243,6 +243,6 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   }
 }
 
-void toTree(Node* head){
+void toTree(char* queueChar){
   
 }
