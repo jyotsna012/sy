@@ -291,6 +291,7 @@ void toTree(char* queueChar){
        char val = queueChar[i];
        top -> setVal(val);
        treepush(head, top);
+       cout << "test3: " <<countTreeStack(head) << endl; //1
     }
   }
   
