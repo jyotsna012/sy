@@ -200,7 +200,6 @@ void infixToPostfix(char equation[80]){
         }
       }
     }
-    cout << "at the end " << endl;
   }
   
   int stackCount = countStack(sHead);
@@ -208,6 +207,7 @@ void infixToPostfix(char equation[80]){
     Node* popped = pop(sHead);
     add(qHead, qTail, popped);
   }
+  cout << "at the end " << endl;
   printStack(sHead);
   printQueue(qHead);  
 }
