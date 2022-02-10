@@ -255,7 +255,7 @@ nodeForTree* treepop(nodeForTree* &head){
 }
 
 void treepush(nodeForTree* &head, nodeForTree* toPush){
-    if(head->getVal() == NULL){
+    if(head->getLeft() == NULL){
     head = toPush;
     head -> setNext(NULL);
   }
