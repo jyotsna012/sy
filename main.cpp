@@ -220,8 +220,9 @@ void infixToPostfix(char equation[80]){
   printStack(sHead);
   printQueue(qHead);
   char* toReturn = new char[countQueue(qHead)];
-  for(int z = 0; i<countQueue(qHead); z++){
-    strcpy(toReturn, '1');
+  for(int z = 0; z<countQueue(qHead); z++){
+    char* temp[1] = {z}
+    strcpy(toReturn, z);
   }
   cout << "toR: " << toReturn << endl;
 }
