@@ -6,7 +6,7 @@ using namespace std;
 
 struct Node{
   Node* next = NULL;
-  char dataVal;
+  char* dataVal = new char[80];
 };
 
 void infixToPostfix(char equation[80]);
@@ -196,7 +196,7 @@ void infixToPostfix(char equation[80]){
             push(sHead, n);
             printStack(sHead);
             printQueue(qHead);
-            cout << queueToChar(qHead) << endl;
+            //cout << queueToChar(qHead) << endl;
             }
         }
       }
@@ -212,7 +212,7 @@ void infixToPostfix(char equation[80]){
   printQueue(qHead);  
 }
 
-Node* queueToChar(Node* head){
+/*Node* queueToChar(Node* head){
   char* array = new char[80];
   while(head != NULL){
     char* theVal = new char[80]; 
@@ -221,7 +221,7 @@ Node* queueToChar(Node* head){
     head = head -> next;
   }
 
-}
+}*/
 
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   if(newImp <= stackImp){
