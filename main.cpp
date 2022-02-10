@@ -65,9 +65,9 @@ int countStack(Node* head){
   head = head -> next;
   }
   return count;
+}
 
 int countTreeStack(nodeForTree* head){
-  
   int count = 0;
   while(head != NULL){
   count = count +1;
