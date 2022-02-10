@@ -215,7 +215,7 @@ void infixToPostfix(char equation[80]){
 Node* queueToChar(Node* head){
   char* array[80];
   while(head != NULL){
-    char* theVal[80] = {head -> dataVal}; 
+    char* theVal[1] = {head -> dataVal}; 
     strcat(array, theVal);
     head = head -> next;
   }
