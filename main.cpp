@@ -152,8 +152,6 @@ char* infixToPostfix(char equation[80]){
       char val = equation[i];
       addIt -> dataVal = val;
       add(qHead, qTail, addIt);
-      printStack(sHead);
-      printQueue(qHead);
     }
     else{
       int stackCount = countStack(sHead);
@@ -163,8 +161,6 @@ char* infixToPostfix(char equation[80]){
         Node* n = new Node;
         n -> dataVal = op;
         push(sHead, n);
-        printStack(sHead);
-        printQueue(qHead);
       }else{
         int newImp = checkImp(op); 
         int stackImp = checkImp(sHead -> dataVal);
@@ -181,8 +177,6 @@ char* infixToPostfix(char equation[80]){
           }
            cout << "came out while " << endl;
             Node* removed = pop(sHead);
-            printStack(sHead);
-            printQueue(qHead);
         }
  
          else if(newImp > stackImp){
@@ -190,23 +184,17 @@ char* infixToPostfix(char equation[80]){
           Node* n = new Node;
           n -> dataVal = op;
           push(sHead, n);
-          printStack(sHead);
-          printQueue(qHead);
           }
         } else if(newImp <= stackImp && newImp != 4){
              if(newImp == -1){
              Node* n = new Node;
              n -> dataVal = op;
              push(sHead, n);
-            printStack(sHead);
-            printQueue(qHead);
             }else{
             popAdd(newImp, stackImp, sHead, qHead, qTail);
             Node* n = new Node;
             n -> dataVal = op;
             push(sHead, n);
-            printStack(sHead);
-            printQueue(qHead);
             }
         }
       }
@@ -218,8 +206,6 @@ char* infixToPostfix(char equation[80]){
     Node* popped = pop(sHead);
     add(qHead, qTail, popped);
   }
-  printStack(sHead);
-  printQueue(qHead);
   char* toReturn = new char[countQueue(qHead)];
   for(int z = 0; z<countQueue(qHead); z++){
     char temp = getCharAt(z, qHead);
