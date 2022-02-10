@@ -196,7 +196,7 @@ void infixToPostfix(char equation[80]){
             push(sHead, n);
             printStack(sHead);
             printQueue(qHead);
-            cout << queueToChar(qHead) << endl;
+            cout << "hello: " << queueToChar(qHead) << endl;
             }
         }
       }
