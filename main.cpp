@@ -270,6 +270,7 @@ void toTree(char* queueChar){
   cout << "hi 1: " << endl;
   nodeForTree* head = new nodeForTree();        
   cout << "hi 2: " << endl;
+  cout << "len: " << strlen(queueChar) << endl;
   for(int i = 0; i < strlen(queueChar); i++){
       cout << "hi 3: " << endl;
     if(isdigit(queueChar[i])){
