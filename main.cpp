@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
+#include "nodeForTree.h"
+
 
 using namespace std;
 
@@ -232,14 +234,14 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
 }
 
 void toTree(char* queueChar){
-  Node* sHead = NULL;
 
   for(int i = 0; i < strlen(queueChar); i++){
     if(isdigit(queueChar[i])){
-      Node* addIt = new Node;
-      char val = queueChar[i];
-      addIt -> dataVal = val;
-      push(sHead, addIt);
+      //add to stack
+    }else{
+      //make the tree node
+      //add the children to tree and pop from stack
+      //push node into stack
     }
   }
   
