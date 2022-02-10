@@ -195,13 +195,14 @@ void infixToPostfix(char equation[80]){
             n -> dataVal = op;
             push(sHead, n);
             printStack(sHead);
-            cout << "hi: " << endl;
             printQueue(qHead);
-            cout << "hi2: " << endl;
             }
         }
       }
     }
+    cout << "hi2: " << endl;
+    printStack(sHead);
+    printQueue(qHead);
   }
   
   int stackCount = countStack(sHead);
