@@ -216,11 +216,15 @@ void infixToPostfix(char equation[80]){
 char* queueToChar(Node* head){
   char* array = new char[80];
   while(head != NULL){
-    cout << "entered" << endl;
+    cout << "entered 1" << endl;
     char* theVal = new char[80]; 
+    cout << "entered 2" << endl;
     strcpy(theVal, (char*)head -> dataVal);
+    cout << "entered 3" << endl;
     strcat(array, theVal);
+    cout << "entered 4" << endl;
     head = head -> next;
+    cout << "entered 5" << endl;
   }
   cout << "returning" << endl;
   return array;
