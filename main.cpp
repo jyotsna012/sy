@@ -279,15 +279,15 @@ void toTree(char* queueChar){
       char val = queueChar[i];
         cout << "hi 6: " << endl;
       addIt -> setVal(val);
-        cout << "hi 7: " << endl;
+        //cout << "hi 7: " << endl;
       //nodeForTree* left = NULL;
-        cout << "hi 8: " << endl;
+        //cout << "hi 8: " << endl;
       //nodeForTree* right = NULL;
-        cout << "hi 9: " << endl;
+        //cout << "hi 9: " << endl;
       //head -> setRight(right);
-        cout << "hi 10: " << endl;
+       //cout << "hi 10: " << endl;
       //head -> setLeft(left);
-        //cout << "hi 11: " << endl;
+        cout << "hi 11: " << endl;
       treepush(head, addIt);
         cout << "hi 12: " << endl;
     }else{
