@@ -20,7 +20,7 @@ nodeForTree* nodeForTree::getRight(){
 }
 
 
-char* nodeForTree::getVal(){
+char nodeForTree::getVal(){
   return val;
 }
 
