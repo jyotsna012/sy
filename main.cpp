@@ -274,6 +274,12 @@ void toTree(char* queueChar){
   for(int i = 0; i < strlen(queueChar); i++){
     cout << "val: " << queueChar[i] << endl;
       cout << "hi 3: " << endl;
+    if(queueChar[i] == ''){
+      cout << "space 0" << endl;
+    }
+    if(queueChar[i] == ' '){
+      cout << "space 2" << endl;
+    }
     if(isdigit(queueChar[i])){
         cout << "hi 4: " << endl;
       nodeForTree* addIt = new nodeForTree();
