@@ -261,6 +261,10 @@ void toTree(char* queueChar){
       nodeForTree* addIt = new nodeForTree;
       char val = queueChar[i];
       addIt -> setVal(val);
+      nodeForTree* left = NULL;
+      nodeForTree* right = NULL;
+      head -> setRight(right);
+      head -> setLeft(left);
       treepush(head, addIt);
     }else{
        nodeForTree* top = NULL;
@@ -271,5 +275,6 @@ void toTree(char* queueChar){
        treepush(head, top);
     }
   }
+  
   
 }
