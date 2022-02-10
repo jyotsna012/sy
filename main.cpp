@@ -282,6 +282,7 @@ void toTree(char* queueChar){
       nodeForTree* top = new nodeForTree();        
        nodeForTree* left = treepop(head);
        nodeForTree* right = treepop(head);
+        cout << "test: " <<countTreeStack(head) << endl;
        top -> setRight(right);
        top -> setLeft(left);
        char val = queueChar[i];
