@@ -20,6 +20,7 @@ void add(Node* &head, Node* &tail, Node* toAdd);
 void printQueue(Node* head);
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
 void toTree(char exp[80]);
+Node* queueToChar(Node* head);
 
 int main(){
   char input[80];
@@ -194,6 +195,7 @@ void infixToPostfix(char equation[80]){
             push(sHead, n);
             printStack(sHead);
             printQueue(qHead);
+            cout << queueToChar(qHead) << endl;
             }
         }
       }
@@ -209,6 +211,15 @@ void infixToPostfix(char equation[80]){
   printQueue(qHead);  
 }
 
+Node* queueToChar(Node* head){
+  char array[80];
+  while(head != NULL){
+    char theVal = head -> dataVal;
+    strcat(array, theVal);
+    head = head -> next;
+  }
+
+}
 
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   if(newImp <= stackImp){
