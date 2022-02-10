@@ -237,19 +237,19 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
 
 nodeForTree* treepop(nodeForTree* &head){
   nodeForTree* temp = head;
-  head = head -> next;
-  temp -> next = NULL;
+  head = head -> getNext();
+  temp -> setNext(NULL);
   return temp;
 }
 
 void treepush(nodeForTree* &head, nodeForTree* toPush){
     if(head == NULL){
     head = toPush;
-    head -> next = NULL;
+    head -> setNext(NULL);
   }
   else{
     nodeForTree* temp = head;
-    toPush -> next = temp;
+    toPush -> setNext(temp);
     head = toPush;
   }
 }
