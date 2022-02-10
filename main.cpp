@@ -255,7 +255,7 @@ nodeForTree* treepop(nodeForTree* &head){
 }
 
 void treepush(nodeForTree* &head, nodeForTree* toPush){
-    if(head == NULL){
+    if(head->getVal() == NULL){
     head = toPush;
     head -> setNext(NULL);
   }
@@ -267,7 +267,8 @@ void treepush(nodeForTree* &head, nodeForTree* toPush){
 }
 
 void toTree(char* queueChar){
-  nodeForTree* head = new nodeForTree();        
+  nodeForTree* head = new nodeForTree(); 
+  head -> setVal(NULL);
   for(int i = 0; i < strlen(queueChar); i++){
     if(isdigit(queueChar[i])){
       nodeForTree* addIt = new nodeForTree();
