@@ -220,7 +220,7 @@ Node* queueToChar(Node* head){
     strcat(array, theVal);
     head = head -> next;
   }
-
+  return array;
 }
 
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
