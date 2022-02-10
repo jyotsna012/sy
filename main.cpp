@@ -292,7 +292,7 @@ void toTree(char* queueChar){
         cout << "hi 12: " << endl;
     }else{
         cout << "hi 13: " << endl;
-       nodeForTree* top = NULL;
+      nodeForTree* top = new nodeForTree();        
         cout << "hi 14: " << endl;
        nodeForTree* left = treepop(head);
         cout << "hi 15: " << endl;
