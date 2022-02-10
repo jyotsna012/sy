@@ -220,7 +220,9 @@ void infixToPostfix(char equation[80]){
   }
   printStack(sHead);
   printQueue(qHead);
+  char* toReturn = new char[countQueue(qHead)];
   for(int z = 0; z<countQueue(qHead); z++){
+    strcpy(toReturn, (char*)&getCharAt(z, qHead));
     cout << getCharAt(z, qHead) << endl;
   }
 }
