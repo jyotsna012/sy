@@ -21,7 +21,7 @@ void add(Node* &head, Node* &tail, Node* toAdd);
 void printQueue(Node* head);
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
 void toTree(char exp[80]);
-Node* queueToChar(Node* head);
+char* queueToChar(Node* head);
 
 int main(){
   char input[80];
@@ -212,7 +212,7 @@ void infixToPostfix(char equation[80]){
   printQueue(qHead);  
 }
 
-Node* queueToChar(Node* head){
+char* queueToChar(Node* head){
   char* array = new char[80];
   while(head != NULL){
     char* theVal = new char[80]; 
