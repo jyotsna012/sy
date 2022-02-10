@@ -6,7 +6,7 @@ using namespace std;
 
 struct Node{
   Node* next = NULL;
-  char dataVal;
+  char* dataVal;
 };
 
 void infixToPostfix(char equation[80]);
@@ -219,7 +219,7 @@ char* queueToChar(Node* head){
     cout << "entered 1" << endl;
     char* theVal = new char[80]; 
     cout << "entered 2" << endl;
-    strcpy(theVal, (char*)head -> dataVal);
+    strcpy(theVal, head -> dataVal);
     cout << "entered 3" << endl;
     strcat(array, theVal);
     cout << "entered 4" << endl;
