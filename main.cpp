@@ -267,53 +267,29 @@ void treepush(nodeForTree* &head, nodeForTree* toPush){
 }
 
 void toTree(char* queueChar){
-  cout << "hi 1: " << endl;
   nodeForTree* head = new nodeForTree();        
-  cout << "hi 2: " << endl;
-  cout << "len: " << strlen(queueChar) << endl;
   for(int i = 0; i < strlen(queueChar); i++){
-    cout << "val: " << queueChar[i] << endl;
-      cout << "hi 3: " << endl;
     if(isdigit(queueChar[i])){
-        cout << "hi 4: " << endl;
       nodeForTree* addIt = new nodeForTree();
-        cout << "hi 5: " << endl;
       char val = queueChar[i];
-        cout << "hi 6: " << endl;
       addIt -> setVal(val);
-        cout << "hi 7: " << endl;
       nodeForTree* left = NULL;
-        cout << "hi 8: " << endl;
       nodeForTree* right = NULL;
-        cout << "hi 9: " << endl;
       head -> setRight(right);
-       cout << "hi 10: " << endl;
       head -> setLeft(left);
-        cout << "hi 11: " << endl;
       treepush(head, addIt);
-        cout << "hi 12: " << endl;
-    }else if(queueChar[i] == '+'){
-        cout << "its a plus: " << endl;
+    }else if(queueChar[i] == '+' || queueChar[i] == '-' || queueChar[i] == '*' || queueChar[i] == '/' || queueChar[i] == '^'){
       nodeForTree* top = new nodeForTree();        
-        cout << "hi 14: " << endl;
        nodeForTree* left = treepop(head);
-        cout << "hi 15: " << endl;
        nodeForTree* right = treepop(head);
-        cout << "hi 16: " << endl;
        top -> setRight(right);
-        cout << "hi 17: " << endl;
        top -> setLeft(left);
-        cout << "hi 18: " << endl;
        char val = queueChar[i];
-        cout << "hi 19: " << endl;
        top -> setVal(val);
-        cout << "hi 20: " << endl;
        treepush(head, top);
     }
-      cout << "hi 21: " << endl;
   }
   
-    cout << "hi 22: " << endl;
   cout << countTreeStack(head) << endl;
   
 }
