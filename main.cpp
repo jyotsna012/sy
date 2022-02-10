@@ -222,7 +222,7 @@ void infixToPostfix(char equation[80]){
   char* toReturn = new char[countQueue(qHead)];
   for(int z = 0; z<3; z++){
     //char* temp = new char[80];
-    strcpy(toReturn, (char*)z);
+    strcpy(toReturn, (char*)&z);
     //strcpy(toReturn, "jji");
     cout << "hi" << endl;
   }
