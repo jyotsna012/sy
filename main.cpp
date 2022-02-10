@@ -222,6 +222,7 @@ void infixToPostfix(char equation[80]){
   char* toReturn = new char[countQueue(qHead)];
   for(int z = 0; z<3; z++){
     strcpy(toReturn, "jji");
+    cout << "hi" << endl;
   }
   cout << "toR: " << toReturn << endl;
 }
