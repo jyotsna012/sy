@@ -200,9 +200,7 @@ void infixToPostfix(char equation[80]){
         }
       }
     }
-    cout << "hi2: " << endl;
-    printStack(sHead);
-    printQueue(qHead);
+    cout << "at the end " << endl;
   }
   
   int stackCount = countStack(sHead);
