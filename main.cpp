@@ -25,6 +25,8 @@ void add(Node* &head, Node* &tail, Node* toAdd);
 void printQueue(Node* head);
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
 void toTree(char* queueChar);
+nodeForTree* treepop(nodeForTree* &head);
+void treepush(nodeForTree* &head, nodeForTree* toPush);
 
 int main(){
   char input[80];
@@ -233,15 +235,40 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   }
 }
 
-void toTree(char* queueChar){
+nodeForTree* treepop(nodeForTree* &head){
+  nodeForTree* temp = head;
+  head = head -> next;
+  temp -> next = NULL;
+  return temp;
+}
 
+void treepush(nodeForTree* &head, nodeForTree* toPush){
+    if(head == NULL){
+    head = toPush;
+    head -> next = NULL;
+  }
+  else{
+    nodeForTree* temp = head;
+    toPush -> next = temp;
+    head = toPush;
+  }
+}
+
+void toTree(char* queueChar){
+  nodeForTree* head = NULL;
   for(int i = 0; i < strlen(queueChar); i++){
     if(isdigit(queueChar[i])){
-      //add to stack
+      nodeForTree* addIt = new nodeForTree;
+      char val = queueChar[i];
+      addIt -> setVal(val);
+      treepush(head, addIt);
     }else{
-      //make the tree node
-      //add the children to tree and pop from stack
-      //push node into stack
+       nodeForTree* top = NULL;
+       nodeForTree* left = treepop(head);
+       nodeForTree* right = treepop(head);
+       top -> setRight(right);
+       top -> setLeft(left);
+       treepush(head, top);
     }
   }
   
