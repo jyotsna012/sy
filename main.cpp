@@ -207,9 +207,9 @@ void infixToPostfix(char equation[80]){
     Node* popped = pop(sHead);
     add(qHead, qTail, popped);
   }
-  cout << "at the end " << endl;
   printStack(sHead);
   printQueue(qHead);  
+  cout << "here is the final queue as a char array: " << queueToChar(qhead) << endl;
 }
 
 char* queueToChar(Node* head){
