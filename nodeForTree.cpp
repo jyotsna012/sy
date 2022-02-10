@@ -8,6 +8,7 @@ nodeForTree::nodeForTree(){
   val = NULL;
   left = NULL;
   right = NULL;
+  next = NULL;
 }
 
 nodeForTree* nodeForTree::getLeft(){
@@ -33,6 +34,14 @@ void nodeForTree::setRight(nodeForTree* newRight){
 
 void nodeForTree::setVal(char newVal){
   val = newVal;
+}
+
+nodeForTree* nodeForTree::getNext(){
+  return next;
+}
+
+void nodeForTree::setNext(nodeForTree* nextNew){
+  next = nextNew;
 }
 
 
