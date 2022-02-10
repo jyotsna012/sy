@@ -76,12 +76,10 @@ Node* pop(Node* &head){
   Node* temp = head;
   head = head -> next;
   temp -> next = NULL;
-  cout << "this is value of popped: " << temp -> dataVal << endl;
   return temp;
 }
 
 Node* peek(Node* head){
-  cout << "this is value of peeked: " << head -> dataVal << endl;
   return head;
 }
 
@@ -103,7 +101,6 @@ Node* remove(Node* &head){
   Node* temp = head;
   head = temp -> next;
   temp -> next = NULL;
-  cout << "this is value of the returned : " << temp -> dataVal << endl;
   return temp;
 }
 
@@ -164,18 +161,13 @@ char* infixToPostfix(char equation[80]){
       }else{
         int newImp = checkImp(op); 
         int stackImp = checkImp(sHead -> dataVal);
-        cout<<"newImp: " << newImp << endl;
-        cout << "stackImp: " << stackImp << endl;
         
         if(newImp == 4){
-           cout << "i am in 4 area " << endl;
           while(stackImp != -1){
-            cout << "came into while " << endl;
             Node* removed = pop(sHead);
             add(qHead, qTail, removed);
             stackImp = checkImp(sHead -> dataVal);
           }
-           cout << "came out while " << endl;
             Node* removed = pop(sHead);
         }
  
@@ -211,7 +203,6 @@ char* infixToPostfix(char equation[80]){
     char temp = getCharAt(z, qHead);
     strcat(toReturn, (char*)&temp);
   }
-  cout << "FINAL QUEUE: " << toReturn << endl;
   return toReturn;
 }
 
@@ -226,7 +217,6 @@ char getCharAt(int a, Node* head){
 
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   if(newImp <= stackImp){
-            cout << "hi, i'm pop adding" << endl;
             Node* removed = pop(sHead);
             add(qHead, qTail, removed);
             if(sHead == NULL){
@@ -234,8 +224,6 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
             }else{
               stackImp = checkImp(sHead -> dataVal);
             }
-            cout << "New Imp: " << newImp << endl;
-            cout << "Check Imp: " << stackImp << endl;
             popAdd(newImp, stackImp, sHead, qHead, qTail);
   }
   else{
