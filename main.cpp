@@ -280,26 +280,17 @@ void toTree(char* queueChar){
       char val = queueChar[i];
       addIt -> setVal(val);
       treepush(head, addIt);
-      cout << "test0: " <<countTreeStack(head) << endl; //1 & 2
     }else if(queueChar[i] == '+' || queueChar[i] == '-' || queueChar[i] == '*' || queueChar[i] == '/' || queueChar[i] == '^'){
       nodeForTree* top = new nodeForTree();
-       cout << "test1: " <<countTreeStack(head) << endl; //1
        nodeForTree* left = treepop(head);
        nodeForTree* right = treepop(head);
-        cout << "test2: " <<countTreeStack(head) << endl;
        top -> setRight(right);
-       cout << "wcheck1" << endl;
        top -> setLeft(left);
-       cout << "wcheck2" << endl;
        char val = queueChar[i];
-       cout << "wcheck3" << endl;
        top -> setVal(val);
-       cout << "wcheck4" << endl;
        treepush(head, top);
-       cout << "test3: " <<countTreeStack(head) << endl; //1
     }
   }
   
-  cout << countTreeStack(head) << endl;
   
 }
