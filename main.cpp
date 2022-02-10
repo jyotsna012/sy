@@ -195,9 +195,9 @@ void infixToPostfix(char equation[80]){
             n -> dataVal = op;
             push(sHead, n);
             printStack(sHead);
-            printQueue(qHead);
             cout << "hi: " << endl;
-            cout << "hello: " << queueToChar(qHead) << endl;
+            printQueue(qHead);
+            cout << "hi2: " << endl;
             }
         }
       }
