@@ -209,7 +209,7 @@ void infixToPostfix(char equation[80]){
   }
   printStack(sHead);
   printQueue(qHead);  
-  cout << "here is the final queue as a char array: " << queueToChar(qhead) << endl;
+  cout << "here is the final queue as a char array: " << queueToChar(qHead) << endl;
 }
 
 char* queueToChar(Node* head){
