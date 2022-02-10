@@ -268,25 +268,25 @@ void treepush(nodeForTree* &head, nodeForTree* toPush){
 
 void toTree(char* queueChar){
   cout << "hi 1: " << endl;
-  nodeForTree* head = NULL;
+  nodeForTree* head = new nodeForTree();        
   cout << "hi 2: " << endl;
   for(int i = 0; i < strlen(queueChar); i++){
       cout << "hi 3: " << endl;
     if(isdigit(queueChar[i])){
         cout << "hi 4: " << endl;
-      nodeForTree* addIt = new nodeForTree;
+      nodeForTree* addIt = new nodeForTree();
         cout << "hi 5: " << endl;
       char val = queueChar[i];
         cout << "hi 6: " << endl;
       addIt -> setVal(val);
-        //cout << "hi 7: " << endl;
-      //nodeForTree* left = NULL;
-        //cout << "hi 8: " << endl;
-      //nodeForTree* right = NULL;
-        //cout << "hi 9: " << endl;
-      //head -> setRight(right);
-       //cout << "hi 10: " << endl;
-      //head -> setLeft(left);
+        cout << "hi 7: " << endl;
+      nodeForTree* left = NULL;
+        cout << "hi 8: " << endl;
+      nodeForTree* right = NULL;
+        cout << "hi 9: " << endl;
+      head -> setRight(right);
+       cout << "hi 10: " << endl;
+      head -> setLeft(left);
         cout << "hi 11: " << endl;
       treepush(head, addIt);
         cout << "hi 12: " << endl;
