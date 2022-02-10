@@ -255,7 +255,7 @@ nodeForTree* treepop(nodeForTree* &head){
 }
 
 void treepush(nodeForTree* &head, nodeForTree* toPush){
-    if(head->getLeft() == NULL){
+    if(head->getVal() == NULL){
     head = toPush;
     head -> setNext(NULL);
   }
@@ -278,12 +278,11 @@ void toTree(char* queueChar){
       nodeForTree* right = NULL;
       head -> setRight(right);
       head -> setLeft(left);
-      cout << "test-1: " <<countTreeStack(head) << endl;
       treepush(head, addIt);
-      cout << "test0: " <<countTreeStack(head) << endl;
+      cout << "test0: " <<countTreeStack(head) << endl; //1 & 2
     }else if(queueChar[i] == '+' || queueChar[i] == '-' || queueChar[i] == '*' || queueChar[i] == '/' || queueChar[i] == '^'){
       nodeForTree* top = new nodeForTree();
-       cout << "test1: " <<countTreeStack(head) << endl;
+       cout << "test1: " <<countTreeStack(head) << endl; //1
        nodeForTree* left = treepop(head);
        nodeForTree* right = treepop(head);
         cout << "test2: " <<countTreeStack(head) << endl;
