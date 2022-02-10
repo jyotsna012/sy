@@ -255,7 +255,7 @@ nodeForTree* treepop(nodeForTree* &head){
 }
 
 void treepush(nodeForTree* &head, nodeForTree* toPush){
-    if(head->getVal() == NULL){
+    if(head == NULL){
     head = toPush;
     head -> setNext(NULL);
   }
@@ -267,17 +267,13 @@ void treepush(nodeForTree* &head, nodeForTree* toPush){
 }
 
 void toTree(char* queueChar){
-  nodeForTree* head = new nodeForTree(); 
+  nodeForTree* head = NULL; 
   head -> setVal(NULL);
   for(int i = 0; i < strlen(queueChar); i++){
     if(isdigit(queueChar[i])){
       nodeForTree* addIt = new nodeForTree();
       char val = queueChar[i];
       addIt -> setVal(val);
-      nodeForTree* left = NULL;
-      nodeForTree* right = NULL;
-      head -> setRight(right);
-      head -> setLeft(left);
       treepush(head, addIt);
       cout << "test0: " <<countTreeStack(head) << endl; //1 & 2
     }else if(queueChar[i] == '+' || queueChar[i] == '-' || queueChar[i] == '*' || queueChar[i] == '/' || queueChar[i] == '^'){
