@@ -11,7 +11,7 @@ class nodeForTree{
   nodeForTree* getLeft();
   nodeForTree* getNext();
   nodeForTree* getRight();
-  char* getVal();
+  char getVal();
   void setVal(char);
 
  private:
