@@ -224,8 +224,10 @@ void infixToPostfix(char equation[80]){
   for(int z = 0; z<countQueue(qHead); z++){
     char temp = getCharAt(z, qHead);
     strcpy(toReturn, (char*)&temp);
-    cout << getCharAt(z, qHead) << endl;
+    cout << toReturn << endl;
   }
+  cout << "final queue as char array: " << toReturn << endl;
+
 }
 
 char getCharAt(int a, Node* head){
