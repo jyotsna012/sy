@@ -9,6 +9,7 @@ struct Node{
   char dataVal;
 };
 
+char getCharAt(int a, Node* head);
 void infixToPostfix(char equation[80]);
 void push(Node* &head, Node* toPush);
 Node* pop(Node* &head);
@@ -219,14 +220,19 @@ void infixToPostfix(char equation[80]){
   }
   printStack(sHead);
   printQueue(qHead);
-  char* toReturn = new char[countQueue(qHead)];
-  for(int z = 0; z<3; z++){
-    strcpy(toReturn, (char*)&z);
-    cout << toReturn << endl;
+  for(int z = 0; z<countQueue(qHead); z++){
+    cout << getCharAt(z, qHead) << endl;
   }
-  cout << "toR: " << toReturn << endl;
 }
 
+char getCharAt(int a, Node* head){
+  
+  for(int i = 0; i < a; i++){
+    head = head -> next;
+  }
+
+  return head -> dataVal;
+}
 
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   if(newImp <= stackImp){
