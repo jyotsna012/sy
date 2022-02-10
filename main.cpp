@@ -35,6 +35,7 @@ int main(){
   cin >> input;
   cin.get();
   cout << "FINAL QUEUE: " << infixToPostfix(input) << endl;
+  toTree(infixToPostfix(input));
 }
 
 void push(Node* &head, Node* toPush){
