@@ -214,6 +214,7 @@ void infixToPostfix(char equation[80]){
 }
 
 char* queueToChar(Node* head){
+  cout << "entered" << endl;
   char* array = new char[80];
   while(head != NULL){
     char* theVal = new char[80]; 
