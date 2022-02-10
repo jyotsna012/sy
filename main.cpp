@@ -272,9 +272,12 @@ void toTree(char* queueChar){
        nodeForTree* right = treepop(head);
        top -> setRight(right);
        top -> setLeft(left);
+       char val = queueChar[i];
+       top -> setVal(val);
        treepush(head, top);
     }
   }
   
+  cout << countStack(head) << endl;
   
 }
