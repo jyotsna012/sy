@@ -18,6 +18,7 @@ Node* pop(Node* &head);
 Node* peek(Node* head);
 void printStack(Node* head);
 int countStack(Node* head);
+int countTreeStack(nodeForTree* head);
 int countQueue(Node* head);
 int checkImp(char toCheck);
 Node* remove(Node* &head);
@@ -64,6 +65,16 @@ int countStack(Node* head){
   head = head -> next;
   }
   return count;
+
+int countTreeStack(nodeForTree* head){
+  
+  int count = 0;
+  while(head != NULL){
+  count = count +1;
+  head = head -> getNext();
+  }
+  return count;
+
 }
 
 int countQueue(Node* head){  
@@ -278,6 +289,6 @@ void toTree(char* queueChar){
     }
   }
   
-  cout << countStack(head) << endl;
+  cout << countTreeStack(head) << endl;
   
 }
