@@ -196,6 +196,7 @@ void infixToPostfix(char equation[80]){
             push(sHead, n);
             printStack(sHead);
             printQueue(qHead);
+            cout << "hi: " << endl;
             cout << "hello: " << queueToChar(qHead) << endl;
             }
         }
@@ -220,6 +221,7 @@ char* queueToChar(Node* head){
     strcat(array, theVal);
     head = head -> next;
   }
+  cout << "returning" << endl;
   return array;
 }
 
