@@ -10,7 +10,7 @@ struct Node{
 };
 
 char getCharAt(int a, Node* head);
-void infixToPostfix(char equation[80]);
+char* infixToPostfix(char equation[80]);
 void push(Node* &head, Node* toPush);
 Node* pop(Node* &head);
 Node* peek(Node* head);
@@ -29,7 +29,7 @@ int main(){
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
   cin >> input;
   cin.get();
-  infixToPostfix(input);
+  cout << infixToPostfix(input) << endl;
 }
 
 void push(Node* &head, Node* toPush){
@@ -142,7 +142,7 @@ int checkImp(char toCheck){
   return importance;
 }
 
-void infixToPostfix(char equation[80]){
+char* infixToPostfix(char equation[80]){
   Node* qHead = NULL;
   Node* qTail = NULL;
   Node* sHead = NULL;
@@ -224,10 +224,9 @@ void infixToPostfix(char equation[80]){
   for(int z = 0; z<countQueue(qHead); z++){
     char temp = getCharAt(z, qHead);
     strcat(toReturn, (char*)&temp);
-    cout << toReturn << endl;
   }
-  cout << "final queue as char array: " << toReturn << endl;
-
+  cout << "FINAL QUEUE: " << toReturn << endl;
+  return toReturn;
 }
 
 char getCharAt(int a, Node* head){
