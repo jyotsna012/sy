@@ -4,8 +4,8 @@
 
 using namespace std;
 
-nodeForTree::nodeForTree(char* newVal){
-  val = newVal;
+nodeForTree::nodeForTree(){
+  val = NULL;
   left = NULL;
   right = NULL;
 }
@@ -29,6 +29,10 @@ void nodeForTree::setLeft(nodeForTree* newLeft){
 
 void nodeForTree::setRight(nodeForTree* newRight){
   right = newRight;
+}
+
+void nodeForTree::setVal(char newVal){
+  val = newVal;
 }
 
 
