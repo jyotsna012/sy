@@ -29,6 +29,8 @@ void toTree(char* queueChar);
 nodeForTree* treepop(nodeForTree* &head);
 void treepush(nodeForTree* &head, nodeForTree* toPush);
 void printInfix(nodeForTree* head);
+void printPost(nodeForTree* head);
+void printPre(nodeForTree* head);
 
 int main(){
   char input[80];
@@ -290,9 +292,13 @@ void toTree(char* queueChar){
   int input2;
   cin >> input2;
   if(input2 == 1){
-    printInfix(head);
+    printPre(head);
   }
   if(input2 == 2){
+    printPost(head);
+  }
+  if(input3 == 3){
+    printInfix(head);
   }
 }
 
@@ -301,7 +307,25 @@ void printInfix(nodeForTree* head){
     return;
   }
   printInfix(head-> getLeft());
-  cout << head -> getVal() << endl;
+  cout << head -> getVal()<< endl;
   printInfix(head-> getRight());
   
+}
+void printPost(nodeForTree* head){
+  if(head == NULL){
+    return;
+  }
+  printPost(head -> getLeft());
+  printPost(head-> getRight());
+  cout << head -> getVal()<< endl;  
+}
+
+void printPre(nodeForTree* head){
+  if(head == NULL){
+    return;
+  }
+  cout << head -> getVal() << endl;
+  printPre(head-> getLeft());
+  printPre(head-> getRight());
+
 }
