@@ -28,6 +28,7 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail);
 void toTree(char* queueChar);
 nodeForTree* treepop(nodeForTree* &head);
 void treepush(nodeForTree* &head, nodeForTree* toPush);
+void printInfix(nodeForTree* head);
 
 int main(){
   char input[80];
@@ -36,12 +37,6 @@ int main(){
   cin.get();
   cout << "HERE IS THE EXPRESSION IN POSTFIX: " << infixToPostfix(input) << endl;
   toTree(infixToPostfix(input));
-  cout << "WOULD YOU LIKE TO OUTPUT AS PREFIX, POSTFIX, OR INFIX. TYPE 1 FOR PRE, 2 FOR POST AND 3 FOR IN " << endl;
-  int input2;
-  cin >> input2;
-  if(input2 == 2){
-    cout << "HERE IS THE EXPRESSION IN POSTFIX: " << infixToPostfix(input) << endl;
-  }
 }
 
 void push(Node* &head, Node* toPush){
@@ -290,7 +285,23 @@ void toTree(char* queueChar){
        top -> setVal(val);
        treepush(head, top);
     }
+  }  
+  cout << "WOULD YOU LIKE TO OUTPUT AS PREFIX, POSTFIX, OR INFIX. TYPE 1 FOR PRE, 2 FOR POST AND 3 FOR IN " << endl;
+  int input2;
+  cin >> input2;
+  if(input2 == 1){
+    printInfix(head);
   }
-  
-  
+  if(input2 == 2){
+    cout << "HERE IS THE EXPRESSION IN POSTFIX: " << infixToPostfix(input) << endl;
+  }
+}
+
+void printInfix(nodeForTree* head){
+  if(head == NULL){
+    return;
+  }
+  printInfix(head-> getLeft());
+  cout << head -> getVal() << endl;
+  printInfix(head-> getRight());
 }
