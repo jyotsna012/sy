@@ -6,13 +6,15 @@
 
 using namespace std;
 
+//struct that is used in stack and queue and has a data value and a neext pointer
 struct Node{
   Node* next = NULL;
   char dataVal;
 };
 
+//a bunch of function prototypes
 char getCharAt(int a, Node* head);
-char* infixToPostfix(char equation[80]);
+char* shuntingYard(char equation[80]);
 void push(Node* &head, Node* toPush);
 Node* pop(Node* &head);
 Node* peek(Node* head);
@@ -32,14 +34,17 @@ void printInfix(nodeForTree* head);
 void printPost(nodeForTree* head);
 void printPre(nodeForTree* head);
 
+//main function will ask the user to input their expression, 
+//and will input the result after the ShuntingYard algorithm into the toTree function to create an expression tree
 int main(){
   char input[80];
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
   cin >> input;
   cin.get();
-  toTree(infixToPostfix(input));
+  toTree(shuntingYard(input));
 }
 
+//new head is equal to what is inputted and the old head is connected to new head
 void push(Node* &head, Node* toPush){
   if(head == NULL){
     head = toPush;
@@ -52,6 +57,7 @@ void push(Node* &head, Node* toPush){
   }
 }
 
+//goes through stack and prints each datavalue
 void printStack(Node* head){  
   cout << "******Stack Start*******"<< endl;
   while(head != NULL){
@@ -61,6 +67,7 @@ void printStack(Node* head){
   cout << "******Stack End*******"<< endl;
 }
 
+//itterartes through stack and increases the counter by one each time
 int countStack(Node* head){  
   int count = 0;
   while(head != NULL){
@@ -70,6 +77,7 @@ int countStack(Node* head){
   return count;
 }
 
+//itterartes through stack and increases the counter by one each time (counts the stack for the binary tree)
 int countTreeStack(nodeForTree* head){
   int count = 0;
   while(head != NULL){
@@ -80,6 +88,7 @@ int countTreeStack(nodeForTree* head){
 
 }
 
+//itterartes through queye and increases the counter by one each time to find length
 int countQueue(Node* head){  
   int count = 0;
   while(head != NULL){
@@ -89,7 +98,7 @@ int countQueue(Node* head){
   return count;
 }
 
-
+//returns the current head and makes the one after the new head
 Node* pop(Node* &head){
   Node* temp = head;
   head = head -> next;
@@ -97,10 +106,12 @@ Node* pop(Node* &head){
   return temp;
 }
 
+//returns head
 Node* peek(Node* head){
   return head;
 }
 
+//adds to queue by making the input the new tail and pointing the old tail to the new one 
 void add(Node* &head, Node* &tail, Node* toAdd){
   if(head == NULL){
     head = toAdd;
@@ -115,6 +126,7 @@ void add(Node* &head, Node* &tail, Node* toAdd){
 
 }
 
+//removes the head from a queue and returns it. makes new head equal to the next node
 Node* remove(Node* &head){
   Node* temp = head;
   head = temp -> next;
@@ -122,6 +134,7 @@ Node* remove(Node* &head){
   return temp;
 }
 
+//iterates through queue to print out each datavalue
 void printQueue(Node* head){
   cout << "******Queue Start*******"<< endl;
   while(head != NULL){
@@ -131,6 +144,7 @@ void printQueue(Node* head){
   cout << "*******Queue End******"<< endl;
 }
 
+//takes a char as the input and returns an importance int based on the importance ranking in the Shunting Yard Algorithm
 int checkImp(char toCheck){
   int importance;
       if(toCheck == '+'){
@@ -157,11 +171,15 @@ int checkImp(char toCheck){
   return importance;
 }
 
-char* infixToPostfix(char equation[80]){
+//goes through Shunting yard algorithim
+char* shuntingYard(char equation[80]){
+  //creates the head and tail pointers for the queue and the stack
   Node* qHead = NULL;
   Node* qTail = NULL;
   Node* sHead = NULL;
+  //loos through the given char array
   for(int i = 0; i < strlen(equation); i++){
+    //if the char at the given point is a digit, it is added to the stack
     if(isdigit(equation[i])){
       Node* addIt = new Node;
       char val = equation[i];
@@ -169,17 +187,19 @@ char* infixToPostfix(char equation[80]){
       add(qHead, qTail, addIt);
     }
     else{
-      int stackCount = countStack(sHead);
-      char op = equation[i];
-      
+      int stackCount = countStack(sHead); //length of stack
+      char op = equation[i]; 
+      //if count equals 0, means the node being added to stack is the first
       if(stackCount == 0){
         Node* n = new Node;
         n -> dataVal = op;
         push(sHead, n);
       }else{
+        //importance of char to be added and the top char of the stack
         int newImp = checkImp(op); 
         int stackImp = checkImp(sHead -> dataVal);
         
+        //newchar is a closing parenthesis so nodes from stack are popped until matching opening in found 
         if(newImp == 4){
           while(stackImp != -1){
             Node* removed = pop(sHead);
@@ -188,19 +208,22 @@ char* infixToPostfix(char equation[80]){
           }
             Node* removed = pop(sHead);
         }
- 
+         //if new char has a higher importance and is not a closing parenthesis, it is added to the top of stack
          else if(newImp > stackImp){
            if(newImp != 4){
           Node* n = new Node;
           n -> dataVal = op;
           push(sHead, n);
           }
+           //if new char has lower importance....
         } else if(newImp <= stackImp && newImp != 4){
+           //if its a opening bracket, it is placed on the stack
              if(newImp == -1){
              Node* n = new Node;
              n -> dataVal = op;
              push(sHead, n);
             }else{
+               //else nodes are popped until the stack char has a imp lower value than new char. all popped noded added to queue
             popAdd(newImp, stackImp, sHead, qHead, qTail);
             Node* n = new Node;
             n -> dataVal = op;
@@ -216,6 +239,7 @@ char* infixToPostfix(char equation[80]){
     Node* popped = pop(sHead);
     add(qHead, qTail, popped);
   }
+  //turns the queue into a char array and returns it
   char* toReturn = new char[countQueue(qHead)];
   for(int z = 0; z<countQueue(qHead); z++){
     char temp = getCharAt(z, qHead);
@@ -307,30 +331,20 @@ void toTree(char* queueChar){
   }
 }
 
-/*void printInfix(nodeForTree* head){
-  if(head == NULL){
-    return;
-  }
-  printInfix(head-> getLeft());
-  cout << head -> getVal();
-  printInfix(head-> getRight());
-  
-}*/
-
 void printInfix(nodeForTree* head){
 
     if(head->getLeft()!=NULL && head->getRight()!= NULL){
-    cout<<"(";
+      cout<<"(";
     }
     if(head->getLeft()!=NULL){
-    printInfix(head->getLeft());
+      printInfix(head->getLeft());
     }
-      cout<<head->getVal();
+    cout<<head->getVal();
     if(head->getRight()!=NULL){
-    printInfix(head->getRight());
+      printInfix(head->getRight());
     }
     if(!(head->getLeft()==NULL && head->getRight()==NULL)){
-    cout<<")";
+      cout<<")";
     }
 }
 
