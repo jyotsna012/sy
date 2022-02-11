@@ -293,7 +293,6 @@ void toTree(char* queueChar){
     printInfix(head);
   }
   if(input2 == 2){
-    cout << "HERE IS THE EXPRESSION IN POSTFIX: " << infixToPostfix(input) << endl;
   }
 }
 
