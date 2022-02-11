@@ -294,14 +294,17 @@ void toTree(char* queueChar){
   if(input2 == 1){
     cout << "PREFIX: ";
     printPre(head);
+    cout<<"\n";
   }
   if(input2 == 2){
     cout << "POSTFIX: ";
     printPost(head);
+    cout<<"\n";
   }
   if(input2 == 3){
      cout << "INFIX: ";
     printInfix(head);
+    cout<<"\n";
   }
 }
 
