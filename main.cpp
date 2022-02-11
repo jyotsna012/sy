@@ -324,8 +324,8 @@ void printInfix(nodeForTree* head){
     }
     if(head->getLeft()!=NULL){
     printInfix(head->getLeft());
-    cout<<head->getVal();
     }
+      cout<<head->getVal();
     if(head->getRight()!=NULL){
     printInfix(head->getRight());
     }
