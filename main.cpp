@@ -307,7 +307,7 @@ void toTree(char* queueChar){
   }
 }
 
-void printInfix(nodeForTree* head){
+/*void printInfix(nodeForTree* head){
   if(head == NULL){
     return;
   }
@@ -315,7 +315,21 @@ void printInfix(nodeForTree* head){
   cout << head -> getVal();
   printInfix(head-> getRight());
   
+}*/
+
+void printInfix(nodeForTree* head){
+
+    if(!(head->getLeft()==NULL && head->getRight()==NULL))
+    cout<<"(";
+    if(head->getLeft()!=NULL)
+    printInfix(start->left);
+    cout<<head->getVal();
+    if(head->getRight()!=NULL)
+    printInfix(head->getRight());
+    if(!(head->getLeft()==NULL && head->getRight()==NULL))
+    cout<<")";
 }
+
 void printPost(nodeForTree* head){
   if(head == NULL){
     return;
