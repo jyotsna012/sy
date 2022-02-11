@@ -277,8 +277,8 @@ void toTree(char* queueChar){
       treepush(head, addIt);
     }else if(queueChar[i] == '+' || queueChar[i] == '-' || queueChar[i] == '*' || queueChar[i] == '/' || queueChar[i] == '^'){
       nodeForTree* top = new nodeForTree();
-       nodeForTree* left = treepop(head);
        nodeForTree* right = treepop(head);
+       nodeForTree* left = treepop(head);
        top -> setRight(right);
        top -> setLeft(left);
        char val = queueChar[i];
