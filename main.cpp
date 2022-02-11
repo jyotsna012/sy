@@ -292,18 +292,20 @@ void toTree(char* queueChar){
   int input2;
   cin >> input2;
   if(input2 == 1){
+    cout << "PREFIX: ";
     printPre(head);
   }
   if(input2 == 2){
+    cout << "POSTFIX: ";
     printPost(head);
   }
   if(input2 == 3){
+     cout << "INFIX: ";
     printInfix(head);
   }
 }
 
 void printInfix(nodeForTree* head){
-  cout << "INFIX: ";
   if(head == NULL){
     return;
   }
@@ -313,7 +315,6 @@ void printInfix(nodeForTree* head){
   
 }
 void printPost(nodeForTree* head){
-  cout << "POSTFIX: ";
   if(head == NULL){
     return;
   }
@@ -323,7 +324,6 @@ void printPost(nodeForTree* head){
 }
 
 void printPre(nodeForTree* head){
-  cout << "PREFIX: ";
   if(head == NULL){
     return;
   }
