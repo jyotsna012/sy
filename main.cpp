@@ -233,7 +233,7 @@ char* shuntingYard(char equation[80]){
       }
     }
   }
-  
+  //everything in stack is popped into the queue
   int stackCount = countStack(sHead);
   for(int a = 0; a < stackCount; a++){
     Node* popped = pop(sHead);
@@ -248,6 +248,7 @@ char* shuntingYard(char equation[80]){
   return toReturn;
 }
 
+//function to get the char at a specific node
 char getCharAt(int a, Node* head){
   
   for(int i = 0; i < a; i++){
@@ -257,6 +258,7 @@ char getCharAt(int a, Node* head){
   return head -> dataVal;
 }
 
+//this function pops the top of the stack and adds it into the queue untill newIMP is less than or equal to stack imp
 void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   if(newImp <= stackImp){
             Node* removed = pop(sHead);
@@ -273,6 +275,7 @@ void popAdd(int newImp, int stackImp, Node* &sHead, Node* &qHead, Node* &qTail){
   }
 }
 
+//function to pop from a stack of tree nodes
 nodeForTree* treepop(nodeForTree* &head){
   nodeForTree* temp = head;
   head = head -> getNext();
@@ -280,6 +283,7 @@ nodeForTree* treepop(nodeForTree* &head){
   return temp;
 }
 
+//function to push to a stack of tree nodes
 void treepush(nodeForTree* &head, nodeForTree* toPush){
     if(head == NULL){
     head = toPush;
@@ -292,6 +296,7 @@ void treepush(nodeForTree* &head, nodeForTree* toPush){
   }
 }
 
+//
 void toTree(char* queueChar){
   nodeForTree* head = NULL; 
   for(int i = 0; i < strlen(queueChar); i++){
