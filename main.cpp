@@ -304,6 +304,11 @@ void printInfix(nodeForTree* head){
   printInfix(head-> getLeft());
   char temp = head -> getVal();
   strcat(toReturn, (char*)&temp);
-  cout << head -> getVal() << endl;
   printInfix(head-> getRight());
+  
+  for(i = 80; i >= 0; i--){
+    cout << toReturn[i];
+  }
+  
+  
 }
