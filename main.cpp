@@ -37,7 +37,6 @@ int main(){
   cout << "please enter you math equation, make sure that there are no spaces" << endl;
   cin >> input;
   cin.get();
-  cout << "HERE IS THE EXPRESSION IN POSTFIX: " << infixToPostfix(input) << endl;
   toTree(infixToPostfix(input));
 }
 
