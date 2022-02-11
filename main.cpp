@@ -297,10 +297,12 @@ void toTree(char* queueChar){
 }
 
 void printInfix(nodeForTree* head){
+  char* toReturn = new char[80];
   if(head == NULL){
     return;
   }
   printInfix(head-> getLeft());
+  strcat(toReturn, (char*)&head -> getVal());
   cout << head -> getVal() << endl;
   printInfix(head-> getRight());
 }
