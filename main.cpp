@@ -319,15 +319,19 @@ void toTree(char* queueChar){
 
 void printInfix(nodeForTree* head){
 
-    if(!(head->getLeft()==NULL && head->getRight()==NULL))
+    if(head->getLeft()!=NULL && head->getRight()!= NULL){
     cout<<"(";
-    if(head->getLeft()!=NULL)
+    }
+    if(head->getLeft()!=NULL){
     printInfix(head->getLeft());
     cout<<head->getVal();
-    if(head->getRight()!=NULL)
+    }
+    if(head->getRight()!=NULL){
     printInfix(head->getRight());
-    if(!(head->getLeft()==NULL && head->getRight()==NULL))
+    }
+    if(!(head->getLeft()==NULL && head->getRight()==NULL)){
     cout<<")";
+    }
 }
 
 void printPost(nodeForTree* head){
