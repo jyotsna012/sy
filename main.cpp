@@ -297,7 +297,7 @@ void toTree(char* queueChar){
   if(input2 == 2){
     printPost(head);
   }
-  if(input3 == 3){
+  if(input2 == 3){
     printInfix(head);
   }
 }
