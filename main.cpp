@@ -297,16 +297,18 @@ void toTree(char* queueChar){
 }
 
 void printInfix(nodeForTree* head){
+  int count;
   char* toReturn = new char[80];
   if(head == NULL){
     return;
   }
   printInfix(head-> getLeft());
   char temp = head -> getVal();
+  count = count + 1;
   strcat(toReturn, (char*)&temp);
   printInfix(head-> getRight());
   
-  for(int i = 80; i >= 0; i--){
+  for(int i = count; i >= 0; i--){
     cout << toReturn[i];
   }
   
