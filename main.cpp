@@ -296,15 +296,19 @@ void treepush(nodeForTree* &head, nodeForTree* toPush){
   }
 }
 
-//
+//function to turn result from Shunting Yard into the bianary expression tree
 void toTree(char* queueChar){
+  //inititiates a null head for the binary tree
   nodeForTree* head = NULL; 
+  //goes through the inputted char array one by one
   for(int i = 0; i < strlen(queueChar); i++){
+    //if the char is a digit then it is added to the stack
     if(isdigit(queueChar[i])){
       nodeForTree* addIt = new nodeForTree();
       char val = queueChar[i];
       addIt -> setVal(val);
       treepush(head, addIt);
+      //everytime its a operator, a new node is formed with the left and right being the previous two nodes in the stack
     }else if(queueChar[i] == '+' || queueChar[i] == '-' || queueChar[i] == '*' || queueChar[i] == '/' || queueChar[i] == '^'){
       nodeForTree* top = new nodeForTree();
        nodeForTree* right = treepop(head);
@@ -316,6 +320,7 @@ void toTree(char* queueChar){
        treepush(head, top);
     }
   }  
+  //once tree is complete, asks user how to output the expression and calls function based on response
   cout << "WOULD YOU LIKE TO OUTPUT AS PREFIX, POSTFIX, OR INFIX. TYPE 1 FOR PRE, 2 FOR POST AND 3 FOR IN " << endl;
   int input2;
   cin >> input2;
@@ -336,6 +341,7 @@ void toTree(char* queueChar){
   }
 }
 
+//follows the left node right pattern untill all nodes are viisted and printed
 void printInfix(nodeForTree* head){
 
     if(head->getLeft()!=NULL && head->getRight()!= NULL){
@@ -353,6 +359,7 @@ void printInfix(nodeForTree* head){
     }
 }
 
+//follows the left right node pattern until all nodes are printed
 void printPost(nodeForTree* head){
   if(head == NULL){
     return;
@@ -362,6 +369,7 @@ void printPost(nodeForTree* head){
   cout << head -> getVal();  
 }
 
+//follows the node left right pattern until all nodes are printed
 void printPre(nodeForTree* head){
   if(head == NULL){
     return;
